@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { HiOutlineMail } from "react-icons/hi";
-import { FiLinkedin } from "react-icons/fi";
 
 export default function UXDesign() {
   const navigate = useNavigate();
@@ -43,6 +41,12 @@ export default function UXDesign() {
               onClick={() => handleProjectClick(project.id)}
             ></div>
             
+            {/* Clickable spacing */}
+            <div 
+              className="h-4 cursor-pointer"
+              onClick={() => handleProjectClick(project.id)}
+            ></div>
+            
             {/* Project Details */}
             <div 
               className="space-y-2 cursor-pointer"
@@ -64,14 +68,6 @@ export default function UXDesign() {
         ))}
       </div>
 
-      {/* Footer */}
-      <div className="mt-16 pt-8">
-        <div className="flex items-center justify-end space-x-4 text-sm text-muted-foreground">
-          <HiOutlineMail className="w-4 h-4" />
-          <FiLinkedin className="w-4 h-4" />
-          <span>Designed & illustrated by me in NYC.</span>
-        </div>
-      </div>
     </div>
   );
 }

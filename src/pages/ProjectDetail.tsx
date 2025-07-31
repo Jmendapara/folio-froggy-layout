@@ -327,20 +327,20 @@ export default function ProjectDetail() {
   
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-2xl font-bold text-foreground mb-8">{project.title}</h1>
+      <h1 className="text-xs font-bold text-foreground mb-8">{project.title}</h1>
       
       <div className="space-y-6">
         {project.sections.map((section, index) => {
           switch (section.type) {
             case 'heading':
               return (
-                <h2 key={index} className="text-xl font-semibold text-foreground mt-8 mb-4">
+                <h2 key={index} className="text-xs font-bold text-foreground mt-8 mb-4">
                   {section.content}
                 </h2>
               );
             case 'text':
               return (
-                <p key={index} className="text-foreground leading-relaxed">
+                <p key={index} className="text-xs text-foreground leading-relaxed">
                   {section.content}
                 </p>
               );
