@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'rufina': ['Rufina', 'serif'],
+				'bricolage': ['Bricolage Grotesque', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -53,6 +57,8 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				placeholder: 'hsl(var(--placeholder))',
+				'sidebar-selected': 'hsl(var(--sidebar-selected))',
+				'project-description': 'hsl(var(--project-description))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

@@ -8,7 +8,7 @@ const navigation = [
 
 export default function Sidebar() {
   return (
-    <div className="fixed left-0 top-0 h-full w-64 bg-sidebar border-r border-border flex flex-col">
+    <div className="fixed left-0 top-0 h-full w-64 bg-sidebar flex flex-col">
       {/* Navigation */}
       <nav className="flex-1 px-6 py-8">
         <ul className="space-y-1">
@@ -17,10 +17,10 @@ export default function Sidebar() {
               <NavLink
                 to={item.href}
                 className={({ isActive }) =>
-                  `block px-4 py-3 text-lg font-medium transition-colors duration-200 ${
+                  `block px-4 py-3 text-2xl font-rufina transition-colors duration-200 ${
                     isActive
-                      ? "text-primary bg-accent rounded-md"
-                      : "text-foreground hover:text-primary hover:bg-accent/50 rounded-md"
+                      ? "text-sidebar-selected"
+                      : "text-black hover:text-sidebar-selected"
                   }`
                 }
               >
