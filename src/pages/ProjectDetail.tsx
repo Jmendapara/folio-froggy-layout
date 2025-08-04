@@ -346,7 +346,32 @@ export default function ProjectDetail() {
               );
             case 'image':
               return (
-                <div key={index} className="w-full bg-placeholder rounded-md my-6" style={{ aspectRatio: '900/370' }}>
+                <div key={index}>
+                  <div className="w-full bg-placeholder rounded-md my-6" style={{ aspectRatio: '900/370' }}>
+                  </div>
+                  
+                  {/* Add project details and problem statement after first image */}
+                  {index === 2 && (
+                    <>
+                      {/* Project Details Component */}
+                      <div className="my-8 text-xs text-foreground space-y-2">
+                        <div><strong>Company:</strong> Capital One (small business card team)</div>
+                        <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
+                        <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
+                        <div><strong>Role:</strong> UX designer (project lead)</div>
+                      </div>
+                      
+                      {/* Problem Statement Component */}
+                      <div className="my-8 p-6 rounded-md" style={{ backgroundColor: '#EEE8D5' }}>
+                        <h2 className="text-sm font-bold mb-4" style={{ color: '#0C5949' }}>Problem statement</h2>
+                        <h3 className="text-xs font-normal leading-relaxed" style={{ color: '#0C5949' }}>
+                          82% of small business customers reported that being able to view business and personal accounts 
+                          separately after logging into online banking is important—yet they were using consumer-centric 
+                          interfaces, contributing to financial risk and usability issues.
+                        </h3>
+                      </div>
+                    </>
+                  )}
                 </div>
               );
             case 'stats':
