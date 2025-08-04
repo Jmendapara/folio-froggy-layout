@@ -1,4 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const projectContent = {
   "object-oriented-design": {
@@ -327,34 +328,35 @@ export default function ProjectDetail() {
   
   return (
     <div className="p-8 max-w-4xl">
-      <h1 className="text-xs font-bold text-foreground mb-8">{project.title}</h1>
+      <h1 className="text-[32px] font-bold text-black font-rufina mb-8">{project.title}</h1>
       
       <div className="space-y-6">
         {project.sections.map((section, index) => {
           switch (section.type) {
             case 'heading':
               return (
-                <h2 key={index} className="text-xs font-bold text-foreground mt-8 mb-4">
+                <h2 key={index} className="text-[24px] font-bold font-rufina mt-8 mb-4" style={{ color: '#0C5949' }}>
                   {section.content}
                 </h2>
               );
             case 'text':
               return (
-                <p key={index} className="text-xs text-foreground leading-relaxed">
+                <p key={index} className="text-xs text-black leading-relaxed font-bricolage">
                   {section.content}
                 </p>
               );
             case 'image':
               return (
                 <div key={index}>
-                  <div className="w-full bg-placeholder rounded-md my-6" style={{ aspectRatio: '900/370' }}>
+                  <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370' }}>
                   </div>
+                  <p className="text-center text-xs text-gray-400 font-bricolage mt-2 mb-6">Image description placeholder</p>
                   
                   {/* Add project details and problem statement after first image */}
                   {index === 2 && (
                     <>
                       {/* Project Details Component */}
-                      <div className="my-8 text-xs text-foreground space-y-2">
+                      <div className="my-8 text-xs text-black space-y-2 font-bricolage">
                         <div><strong>Company:</strong> Capital One (small business card team)</div>
                         <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
                         <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
@@ -362,13 +364,95 @@ export default function ProjectDetail() {
                       </div>
                       
                       {/* Problem Statement Component */}
-                      <div className="my-8 p-6 rounded-md" style={{ backgroundColor: '#EEE8D5' }}>
-                        <h2 className="text-sm font-bold mb-4" style={{ color: '#0C5949' }}>Problem statement</h2>
-                        <h3 className="text-xs font-normal leading-relaxed" style={{ color: '#0C5949' }}>
+                      <div className="my-8 p-6" style={{ backgroundColor: '#EEE8D5' }}>
+                        <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
+                        <h2 className="text-[24px] font-bold font-rufina leading-relaxed" style={{ color: '#0C5949' }}>
                           82% of small business customers reported that being able to view business and personal accounts 
                           separately after logging into online banking is important—yet they were using consumer-centric 
                           interfaces, contributing to financial risk and usability issues.
-                        </h3>
+                        </h2>
+                      </div>
+
+                      {/* Carousel Component */}
+                      <div className="my-8">
+                        <Carousel className="w-full max-w-3xl mx-auto">
+                          <CarouselContent>
+                            <CarouselItem>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              </div>
+                            </CarouselItem>
+                            <CarouselItem>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              </div>
+                            </CarouselItem>
+                            <CarouselItem>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              </div>
+                            </CarouselItem>
+                          </CarouselContent>
+                          <CarouselPrevious />
+                          <CarouselNext />
+                        </Carousel>
+                        <p className="text-center text-xs text-black font-bricolage mt-4">
+                          This carousel showcases the user interface designs and wireframes developed during the research phase.
+                        </p>
+                      </div>
+
+                      {/* Three Column Component */}
+                      <div className="my-8">
+                        <h2 className="text-[24px] font-bold font-rufina mb-6" style={{ color: '#0C5949' }}>Key Features</h2>
+                        <div className="grid grid-cols-3 gap-8">
+                          <div>
+                            <h3 className="text-base font-bold font-rufina mb-3">User Research</h3>
+                            <p className="text-xs text-black font-bricolage leading-relaxed">
+                              Conducted comprehensive user interviews and surveys to understand customer pain points and needs.
+                            </p>
+                          </div>
+                          <div>
+                            <h3 className="text-base font-bold font-rufina mb-3">Design Framework</h3>
+                            <p className="text-xs text-black font-bricolage leading-relaxed">
+                              Developed a scalable object-oriented design system that separates business and personal banking experiences.
+                            </p>
+                          </div>
+                          <div>
+                            <h3 className="text-base font-bold font-rufina mb-3">Implementation</h3>
+                            <p className="text-xs text-black font-bricolage leading-relaxed">
+                              Created detailed specifications and worked with development teams to ensure proper implementation.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Image and Text Component */}
+                      <div className="my-8 flex gap-8">
+                        <div className="flex-1">
+                          <h2 className="text-[24px] font-bold font-rufina mb-4" style={{ color: '#0C5949' }}>Design Process</h2>
+                          <div className="space-y-4">
+                            <div>
+                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Discovery Phase</h3>
+                              <p className="text-xs text-black font-bricolage leading-relaxed">
+                                We began with extensive user research to understand the current pain points in the existing interface.
+                              </p>
+                            </div>
+                            <div>
+                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Ideation</h3>
+                              <p className="text-xs text-black font-bricolage leading-relaxed">
+                                Brainstormed solutions with cross-functional teams to address the separation of business and personal accounts.
+                              </p>
+                            </div>
+                            <div>
+                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Testing</h3>
+                              <p className="text-xs text-black font-bricolage leading-relaxed">
+                                Conducted usability tests to validate our design decisions and iterate on the solutions.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-80">
+                          <div className="w-full bg-placeholder" style={{ aspectRatio: '300/400' }}>
+                          </div>
+                          <p className="text-center text-xs text-gray-400 font-bricolage mt-2">Process diagram</p>
+                        </div>
                       </div>
                     </>
                   )}

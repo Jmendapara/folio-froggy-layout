@@ -49,18 +49,18 @@ export default function UXDesign() {
             
             {/* Project Details */}
             <div 
-              className="space-y-2 cursor-pointer"
+              className="cursor-pointer"
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="flex justify-between items-start">
-                <h3 className="text-xs font-bold text-foreground leading-tight flex-1 pr-4">
+                <h3 className="text-xs font-bold text-black leading-tight flex-1 pr-4">
                   {project.title}
                 </h3>
-                <span className="text-xs font-bold text-project-description">
+                <span className="text-xs font-bold text-[#696969]">
                   {project.duration}
                 </span>
               </div>
-              <p className="text-xs font-bold text-project-description">
+              <p className="text-xs font-bold text-[#696969]">
                 {project.description}
               </p>
             </div>
