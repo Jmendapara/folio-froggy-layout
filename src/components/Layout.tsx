@@ -19,10 +19,22 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <div className="p-8 pt-16">
+        <div className="p-8 pt-24">
           <div className="flex items-center justify-end space-x-4 text-xs text-black">
-            <HiOutlineMail className="w-6 h-6 text-black" />
-            <FiLinkedin className="w-6 h-6 text-black" />
+            <a 
+              href="mailto:gupta.raina.99@gmail.com?subject=Let's chat!"
+              className="text-black hover:opacity-70"
+            >
+              <HiOutlineMail className="w-4 h-4" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/rainagupta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:opacity-70"
+            >
+              <FiLinkedin className="w-4 h-4" />
+            </a>
             <span>Designed & illustrated by me in NYC.</span>
           </div>
         </div>

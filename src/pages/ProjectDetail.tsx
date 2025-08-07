@@ -335,7 +335,7 @@ export default function ProjectDetail() {
       <div className="mb-6">
         <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
         </div>
-        <p className="text-center text-xs text-gray-400 font-bricolage mt-1">Project overview image</p>
+        <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Project overview image</p>
       </div>
       
       <div className="space-y-6">
@@ -358,7 +358,7 @@ export default function ProjectDetail() {
                 <div key={index}>
                   <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                   </div>
-                  <p className="text-center text-xs text-gray-400 font-bricolage mt-1 mb-6">Image description placeholder</p>
+                  <p className="text-center text-xs font-bricolage mt-4 mb-6" style={{ color: '#6B6B6B' }}>Image description placeholder</p>
                   
                   {/* Add project details and problem statement after first image */}
                   {index === 2 && (
@@ -405,7 +405,7 @@ export default function ProjectDetail() {
                             <ChevronRight className="h-4 w-4" />
                           </CarouselNext>
                         </Carousel>
-                        <p className="text-center text-xs text-black font-bricolage mt-4">
+                        <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>
                           This carousel showcases the user interface designs and wireframes developed during the research phase.
                         </p>
                       </div>
@@ -463,7 +463,7 @@ export default function ProjectDetail() {
                         <div className="w-80">
                           <div className="w-full bg-placeholder" style={{ aspectRatio: '300/400', borderRadius: '0px' }}>
                           </div>
-                          <p className="text-center text-xs text-gray-400 font-bricolage mt-1">Process diagram</p>
+                          <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Process diagram</p>
                         </div>
                       </div>
                     </>
@@ -476,7 +476,7 @@ export default function ProjectDetail() {
                   {section.stats?.map((stat, statIndex) => (
                     <div key={statIndex} className="text-center">
                       <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>{stat.number}</h3>
-                      <div className="text-sm text-muted-foreground mt-2">{stat.description}</div>
+                      <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
                     </div>
                   ))}
                 </div>
