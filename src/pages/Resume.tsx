@@ -9,7 +9,7 @@ export default function Resume() {
     <div className="p-8 max-w-4xl">
       {/* Resume Image */}
       <div className="mb-8">
-        <div className="w-full bg-placeholder rounded-md" style={{ aspectRatio: '8.5/11', maxHeight: '80vh' }}>
+        <div className="w-full bg-placeholder" style={{ aspectRatio: '8.5/11', maxHeight: '80vh', borderRadius: '0px' }}>
           {/* Resume image placeholder */}
         </div>
       </div>
@@ -18,8 +18,8 @@ export default function Resume() {
       <div className="flex justify-end">
         <button 
           onClick={handleDownloadPDF}
-          className="px-6 py-2 text-white rounded-md text-sm font-medium transition-colors hover:opacity-90"
-          style={{ backgroundColor: '#0C5949' }}
+          className="px-6 py-4 text-white text-sm font-medium transition-colors hover:opacity-90"
+          style={{ backgroundColor: '#0C5949', borderRadius: '0px' }}
         >
           Download PDF
         </button>

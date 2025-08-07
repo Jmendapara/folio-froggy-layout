@@ -1,5 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projectContent = {
   "object-oriented-design": {
@@ -330,6 +331,13 @@ export default function ProjectDetail() {
     <div className="p-8 max-w-4xl">
       <h1 className="text-[32px] font-bold text-black font-rufina mb-8">{project.title}</h1>
       
+      {/* Hero Image */}
+      <div className="mb-6">
+        <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
+        </div>
+        <p className="text-center text-xs text-gray-400 font-bricolage mt-1">Project overview image</p>
+      </div>
+      
       <div className="space-y-6">
         {project.sections.map((section, index) => {
           switch (section.type) {
@@ -348,9 +356,9 @@ export default function ProjectDetail() {
             case 'image':
               return (
                 <div key={index}>
-                  <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370' }}>
+                  <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                   </div>
-                  <p className="text-center text-xs text-gray-400 font-bricolage mt-2 mb-6">Image description placeholder</p>
+                  <p className="text-center text-xs text-gray-400 font-bricolage mt-1 mb-6">Image description placeholder</p>
                   
                   {/* Add project details and problem statement after first image */}
                   {index === 2 && (
@@ -364,13 +372,13 @@ export default function ProjectDetail() {
                       </div>
                       
                       {/* Problem Statement Component */}
-                      <div className="my-8 p-6" style={{ backgroundColor: '#EEE8D5' }}>
+                      <div className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
                         <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
-                        <h2 className="text-[24px] font-bold font-rufina leading-relaxed" style={{ color: '#0C5949' }}>
+                        <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
                           82% of small business customers reported that being able to view business and personal accounts 
                           separately after logging into online banking is important—yet they were using consumer-centric 
                           interfaces, contributing to financial risk and usability issues.
-                        </h2>
+                        </h3>
                       </div>
 
                       {/* Carousel Component */}
@@ -378,20 +386,24 @@ export default function ProjectDetail() {
                         <Carousel className="w-full max-w-3xl mx-auto">
                           <CarouselContent>
                             <CarouselItem>
-                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                               </div>
                             </CarouselItem>
                             <CarouselItem>
-                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                               </div>
                             </CarouselItem>
                             <CarouselItem>
-                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370' }}>
+                              <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                               </div>
                             </CarouselItem>
                           </CarouselContent>
-                          <CarouselPrevious />
-                          <CarouselNext />
+                          <CarouselPrevious className="bg-white border-gray-300">
+                            <ChevronLeft className="h-4 w-4" />
+                          </CarouselPrevious>
+                          <CarouselNext className="bg-white border-gray-300">
+                            <ChevronRight className="h-4 w-4" />
+                          </CarouselNext>
                         </Carousel>
                         <p className="text-center text-xs text-black font-bricolage mt-4">
                           This carousel showcases the user interface designs and wireframes developed during the research phase.
@@ -403,19 +415,19 @@ export default function ProjectDetail() {
                         <h2 className="text-[24px] font-bold font-rufina mb-6" style={{ color: '#0C5949' }}>Key Features</h2>
                         <div className="grid grid-cols-3 gap-8">
                           <div>
-                            <h3 className="text-base font-bold font-rufina mb-3">User Research</h3>
+                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
                             <p className="text-xs text-black font-bricolage leading-relaxed">
                               Conducted comprehensive user interviews and surveys to understand customer pain points and needs.
                             </p>
                           </div>
                           <div>
-                            <h3 className="text-base font-bold font-rufina mb-3">Design Framework</h3>
+                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Design Framework</h3>
                             <p className="text-xs text-black font-bricolage leading-relaxed">
                               Developed a scalable object-oriented design system that separates business and personal banking experiences.
                             </p>
                           </div>
                           <div>
-                            <h3 className="text-base font-bold font-rufina mb-3">Implementation</h3>
+                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Implementation</h3>
                             <p className="text-xs text-black font-bricolage leading-relaxed">
                               Created detailed specifications and worked with development teams to ensure proper implementation.
                             </p>
@@ -449,9 +461,9 @@ export default function ProjectDetail() {
                           </div>
                         </div>
                         <div className="w-80">
-                          <div className="w-full bg-placeholder" style={{ aspectRatio: '300/400' }}>
+                          <div className="w-full bg-placeholder" style={{ aspectRatio: '300/400', borderRadius: '0px' }}>
                           </div>
-                          <p className="text-center text-xs text-gray-400 font-bricolage mt-2">Process diagram</p>
+                          <p className="text-center text-xs text-gray-400 font-bricolage mt-1">Process diagram</p>
                         </div>
                       </div>
                     </>
@@ -460,10 +472,10 @@ export default function ProjectDetail() {
               );
             case 'stats':
               return (
-                <div key={index} className="flex justify-between items-center my-8 py-8 border-t border-b border-border">
+                <div key={index} className="flex justify-between items-center my-8 py-8">
                   {section.stats?.map((stat, statIndex) => (
                     <div key={statIndex} className="text-center">
-                      <div className="text-3xl font-bold text-foreground">{stat.number}</div>
+                      <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>{stat.number}</h3>
                       <div className="text-sm text-muted-foreground mt-2">{stat.description}</div>
                     </div>
                   ))}

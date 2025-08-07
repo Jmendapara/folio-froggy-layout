@@ -26,24 +26,19 @@ export default function UXDesign() {
 
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="p-8 space-y-8">
       {/* Projects */}
-      <div className="space-y-12">
+      <div className="space-y-16">
         {projects.map((project, index) => (
           <div key={index} className="space-y-4">
             {/* Project Image */}
             <div 
-              className="w-full bg-placeholder rounded-md cursor-pointer"
-              style={{ aspectRatio: '900/370' }}
-              onClick={() => handleProjectClick(project.id)}
-            ></div>
-            
-            {/* Clickable spacing */}
-            <div 
-              className="h-4 cursor-pointer"
+              className="w-full bg-placeholder cursor-pointer"
+              style={{ aspectRatio: '900/370', borderRadius: '0px' }}
               onClick={() => handleProjectClick(project.id)}
             ></div>
             

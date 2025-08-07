@@ -36,7 +36,7 @@ export default function Sidebar() {
         <img
           src={wompWompImage}
           alt="Womp womp illustration"
-          className="w-16 h-16 mx-auto opacity-60"
+          className="w-full mx-auto opacity-60"
         />
       </div>
     </div>

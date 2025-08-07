@@ -19,10 +19,10 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <div className="p-8">
-          <div className="flex items-center justify-end space-x-4 text-xs text-muted-foreground">
-            <HiOutlineMail className="w-5 h-5" />
-            <FiLinkedin className="w-5 h-5" />
+        <div className="p-8 pt-16">
+          <div className="flex items-center justify-end space-x-4 text-xs text-black">
+            <HiOutlineMail className="w-6 h-6 text-black" />
+            <FiLinkedin className="w-6 h-6 text-black" />
             <span>Designed & illustrated by me in NYC.</span>
           </div>
         </div>
