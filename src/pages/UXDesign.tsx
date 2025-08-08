@@ -44,7 +44,7 @@ export default function UXDesign() {
             
             {/* Project Details */}
             <div 
-              className="cursor-pointer"
+              className="cursor-pointer space-y-4"
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="flex justify-between items-start">
@@ -55,7 +55,7 @@ export default function UXDesign() {
                   {project.duration}
                 </span>
               </div>
-              <p className="text-xs font-bold text-[#696969] pt-4">
+              <p className="text-xs font-bold text-[#696969]">
                 {project.description}
               </p>
             </div>

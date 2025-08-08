@@ -11,8 +11,8 @@ export default function Resume() {
         <img 
           src="/lovable-uploads/105d1265-358e-48c5-b357-970420c776b5.png"
           alt="Raina Gupta Resume"
-          className="w-full"
-          style={{ aspectRatio: '8.5/11', maxHeight: '80vh', borderRadius: '0px' }}
+          className="w-full h-auto object-contain"
+          style={{ borderRadius: '0px' }}
         />
       </div>
 
@@ -20,8 +20,8 @@ export default function Resume() {
       <div className="flex justify-end">
         <button 
           onClick={handleOpenPDF}
-          className="px-6 py-6 text-white text-sm font-medium transition-colors hover:opacity-90"
-          style={{ backgroundColor: '#0C5949', borderRadius: '0px' }}
+          className="px-6 py-4 text-white text-sm font-medium transition-colors hover:opacity-90"
+          style={{ backgroundColor: '#0C5949', borderRadius: '0px', paddingTop: '16px', paddingBottom: '16px' }}
         >
           Open PDF
         </button>

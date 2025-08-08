@@ -335,7 +335,7 @@ export default function ProjectDetail() {
       <div className="mb-6">
         <div className="w-full bg-placeholder" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
         </div>
-        <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Project overview image</p>
+        <p className="text-center text-xs font-bricolage" style={{ color: '#6B6B6B', marginTop: '16px' }}>Project overview image</p>
       </div>
       
       <div className="space-y-6">
@@ -358,7 +358,7 @@ export default function ProjectDetail() {
                 <div key={index}>
                   <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                   </div>
-                  <p className="text-center text-xs font-bricolage mt-4 mb-6" style={{ color: '#6B6B6B' }}>Image description placeholder</p>
+                  <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>Image description placeholder</p>
                   
                   {/* Add project details and problem statement after first image */}
                   {index === 2 && (
