@@ -5,7 +5,7 @@ export default function Resume() {
   };
 
   return (
-    <div className="p-8 max-w-4xl">
+    <div className="p-8 max-w-full">
       {/* Resume Image */}
       <div className="mb-8">
         <img 

@@ -6,7 +6,11 @@ const navigation = [
   { name: "Resume", href: "/resume" },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  onItemClick?: () => void;
+}
+
+export default function Sidebar({ onItemClick }: SidebarProps = {}) {
   return (
     <div className="fixed left-0 top-0 h-full w-64 bg-sidebar flex flex-col">
       {/* Navigation */}
@@ -16,6 +20,7 @@ export default function Sidebar() {
             <li key={item.name}>
               <NavLink
                 to={item.href}
+                onClick={onItemClick}
                 className={({ isActive }) =>
                   `block px-4 py-2 text-2xl font-rufina font-bold transition-colors duration-200 ${
                     isActive
@@ -36,7 +41,7 @@ export default function Sidebar() {
         <img
           src={wompWompImage}
           alt="Womp womp illustration"
-          className="w-1/2 mx-auto opacity-60"
+          className="w-[70%] mx-auto opacity-60"
         />
       </div>
     </div>

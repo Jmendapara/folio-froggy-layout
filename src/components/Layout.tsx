@@ -1,19 +1,55 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Sidebar from "./Sidebar";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiLinkedin } from "react-icons/fi";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const isMobile = useIsMobile();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
-      <Sidebar />
+      {/* Mobile Header */}
+      {isMobile && (
+        <header className="fixed top-0 left-0 right-0 h-16 bg-background border-b border-gray-200 flex items-center justify-between px-4 z-50">
+          <h1 className="text-lg font-bold">Portfolio</h1>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2"
+          >
+            {isMobileMenuOpen ? (
+              <HiOutlineX className="w-6 h-6" />
+            ) : (
+              <HiOutlineMenu className="w-6 h-6" />
+            )}
+          </button>
+        </header>
+      )}
+
+      {/* Desktop Sidebar */}
+      {!isMobile && <Sidebar />}
       
-      {/* Main content area with left margin for sidebar */}
-      <main className="ml-64 flex flex-col">
+      {/* Mobile Sidebar Overlay */}
+      {isMobile && isMobileMenuOpen && (
+        <>
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="fixed top-16 right-0 h-full w-64 bg-sidebar z-50">
+            <Sidebar onItemClick={() => setIsMobileMenuOpen(false)} />
+          </div>
+        </>
+      )}
+      
+      {/* Main content area */}
+      <main className={`flex flex-col ${isMobile ? 'pt-16' : 'ml-64'}`}>
         <div className="flex-1 overflow-y-auto">
           {children}
         </div>

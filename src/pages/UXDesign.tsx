@@ -48,14 +48,14 @@ export default function UXDesign() {
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="flex justify-between items-start">
-                <h3 className="text-xs font-bold text-black leading-tight flex-1 pr-4">
+                <h3 className="text-xs font-bold text-black leading-tight w-1/2 pr-4">
                   {project.title}
                 </h3>
-                <span className="text-xs font-bold text-[#696969]">
+                <span className="text-xs font-bold text-[#696969] w-1/2 text-right">
                   {project.duration}
                 </span>
               </div>
-              <p className="text-xs font-bold text-[#696969] mt-0">
+              <p className="text-xs font-bold text-[#696969]" style={{ marginTop: '0px' }}>
                 {project.description}
               </p>
             </div>
