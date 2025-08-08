@@ -328,7 +328,7 @@ export default function ProjectDetail() {
   const project = projectContent[projectId as keyof typeof projectContent];
   
   return (
-    <div className="p-8 max-w-4xl">
+    <div className="p-8 max-w-full">
       <h1 className="text-[32px] font-bold text-black font-rufina mb-8">{project.title}</h1>
       
       {/* Hero Image */}
@@ -356,7 +356,7 @@ export default function ProjectDetail() {
             case 'image':
               return (
                 <div key={index}>
-                  <div className="w-full bg-placeholder my-6" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
+                  <div className="w-full bg-placeholder mt-6" style={{ aspectRatio: '900/370', borderRadius: '0px' }}>
                   </div>
                   <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>Image description placeholder</p>
                   
@@ -410,10 +410,10 @@ export default function ProjectDetail() {
                         </p>
                       </div>
 
-                      {/* Three Column Component */}
+                      {/* Four Column Component */}
                       <div className="my-8">
                         <h2 className="text-[24px] font-bold font-rufina mb-6" style={{ color: '#0C5949' }}>Key Features</h2>
-                        <div className="grid grid-cols-3 gap-8">
+                        <div className="grid grid-cols-4 gap-6">
                           <div>
                             <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
                             <p className="text-xs text-black font-bricolage leading-relaxed">
@@ -430,6 +430,12 @@ export default function ProjectDetail() {
                             <h3 className="text-xs font-bold text-black font-bricolage mb-3">Implementation</h3>
                             <p className="text-xs text-black font-bricolage leading-relaxed">
                               Created detailed specifications and worked with development teams to ensure proper implementation.
+                            </p>
+                          </div>
+                          <div>
+                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Validation</h3>
+                            <p className="text-xs text-black font-bricolage leading-relaxed">
+                              Performed usability testing and gathered feedback to validate design decisions and iterate on solutions.
                             </p>
                           </div>
                         </div>

@@ -55,7 +55,7 @@ export default function UXDesign() {
                   {project.duration}
                 </span>
               </div>
-              <p className="text-xs font-bold text-[#696969]">
+              <p className="text-xs font-bold text-[#696969] mt-0">
                 {project.description}
               </p>
             </div>

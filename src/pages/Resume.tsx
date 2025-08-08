@@ -12,7 +12,7 @@ export default function Resume() {
           src="/lovable-uploads/105d1265-358e-48c5-b357-970420c776b5.png"
           alt="Raina Gupta Resume"
           className="w-full h-auto object-contain"
-          style={{ borderRadius: '0px' }}
+          style={{ borderRadius: '0px', border: '1px solid #E5E5E5' }}
         />
       </div>
 
