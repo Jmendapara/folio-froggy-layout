@@ -106,20 +106,35 @@ const projectContent = {
     title: "Building a digital financial hub for small business owners within their banking platform",
     sections: [
       {
-        type: "text",
-        content: "Small business customers leverage a number of different financial solutions to support day to day tasks without a means for integrating information across these various solutions in order to get a full financial picture of their business health."
+        type: "image"
+      },
+      {
+        type: "project-details",
+        content: "Company: Capital One (small business card team), Timeline: February 2024-August 2024, Tools & methodologies: Prototyping, UI design, QA review, Role: UX designer (co-design lead)"
+      },
+      {
+        type: "problem-statement",
+        content: "Small business customers leverage a number of different financial solutions to support day to day tasks without a means for integrating information across these various solutions in order to get a full financial picture of their business' health."
       },
       {
         type: "heading",
         content: "Our solution"
       },
       {
-        type: "text",
-        content: "Our business hub channel will be developed to create a business home page where one can access and perform lead impact despite their most customer B. Plan financial solutions within the servicing platform designed to keep their focus base app in a helpful experience we also offering helpful checking service and resolution during connections."
+        type: "text-bold",
+        content: "My partners and I decided we wanted to create a 'Business Home' page where users can access data, products, and insights about their small business in a single, cohesive digital forum."
+      },
+      {
+        type: "text-bold",
+        content: "For our MVP, we decided to keep our demographic to single product, single business customers to keep the scope small and use an iterative approach to scale the page."
       },
       {
         type: "heading",
         content: "The research"
+      },
+      {
+        type: "text",
+        content: "In order to validate both the customer and business need, my research partner conducted a handful of studies. Here are some quotes from participants:"
       },
       {
         type: "image"
@@ -129,25 +144,31 @@ const projectContent = {
         content: "The design process"
       },
       {
+        type: "text-bold",
+        content: "After several rounds of design iteration, our team recognized that given the novelty and significance of this feature, complete confidence in a 'perfect' solution would only come with real-world usage and feedback."
+      },
+      {
         type: "text",
-        content: "I worked closely with the team to make sure to design the understanding of our future customers coordinate a so solution continue to work they need with main and challenge our feedback."
+        content: "Embracing an iterative mindset, we partnered closely with our product and engineering counterparts to balance delivery speed, business objectives, and user needs—aligning on a clear hypothesis for what an ideal MVP dashboard could look like."
+      },
+      {
+        type: "image-caption",
+        content: "My design partner and I went through many iterations of the dashboard where we explored placements, various features, and visual treatments"
+      },
+      {
+        type: "text",
+        content: "Over the course of 3 weeks, my design partner and I went to multiple design forums to get feedback on content, visuals, and customer experience. We finally got official design approval for the following screens."
       },
       {
         type: "image"
       },
       {
-        type: "text",
-        content: "Our solution can be shared most points our team with our business team in our relationship with customers in improving including our tech team to experience the thinking of our delivery. We find outcomes of whether the design after the tool right be helpful to design bringing bringing feedback on context, clearly, who is directly integrated to the thinking of future context, solutions."
+        type: "text-bold",
+        content: "We crafted the content and visuals on the page using data we already had access to. To encourage exploration, we funneled users to our existing products and features with high engagement through thoughtful links and visualizations. We also added a feedback touchpoint as an easy way for users to share their thoughts in their own words, complementing the behavioral insights we were already gathering behind the scenes. Here's a visual breakdown of the page:"
       },
       {
-        type: "image"
-      },
-      {
-        type: "text",
-        content: "our software can use all their user impacts of the solutions can access and tracking these feedback solution for environment helping us and us confident service or and challenge framework during all resolution be available to better help service or financial solution check how we developed a common solution."
-      },
-      {
-        type: "image"
+        type: "image-caption",
+        content: "We designed the page to be modular, with each business feature housed in its own dedicated widget."
       },
       {
         type: "heading",
@@ -155,26 +176,36 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "Make sure project finance and many QA and help keeping working with their app in place financial as we collaborating for reviewing markings and or other apps where service bringing us all related to the most as part all for help keeping very challenging we so experience the service or financial development be understand for many."
+        content: "With this page being a custom build, we worked really closely with our tech partners to ensure we were designing for technical feasibility on all edge cases, while also monitoring the build in QA to avoid any disparities from the original design."
       },
       {
-        type: "image"
+        type: "text",
+        content: "Once the page was live, we stayed close to our live analytics by having weekly checkins where we oversaw page engagement and troubleshooted any unexpected bugs."
+      },
+      {
+        type: "image-caption",
+        content: "A look into our weekly refinement sessions where we monitored clickstream data and success metrics"
       },
       {
         type: "heading",
         content: "Next steps"
       },
       {
-        type: "text",
-        content: "Multi-level access — Research to find the secondary connections for enabling customer access for their business user view"
-      },
-      {
-        type: "text",
-        content: "Secondary more views — The challenge to understand if the help need to help and helping user view"
-      },
-      {
-        type: "text",
-        content: "Monitor expense feedback — A challenge for us to provide solution to improve our most application team view and helping customer can more easily customer to our financial solutions tracking in order to think about best solution on our customer service or financial experience"
+        type: "three-column-custom",
+        columns: [
+          {
+            title: "Multi-card users",
+            description: "We look to adapt this dashboard to aggregate multiple account data into one, cohesive business view. This will allow users to get a glimpse at the full ecosystem of their business's financial health."
+          },
+          {
+            title: "Secondary user views",
+            description: "Account users and account managers don't have full access to the level of detail that primary users do. They require a dashboard views that are personalized to their needs and access levels."
+          },
+          {
+            title: "Monitor success metrics",
+            description: "I worked with my tech team to put benchmarks into place to track clickstream and retention data. We look to use this data, along with ongoing research and auditing to craft the next iterations of the business dashboard."
+          }
+        ]
       }
     ]
   },
@@ -391,6 +422,22 @@ export default function ProjectDetail() {
                     <>
                       We were able to understand <strong>what makes up both user and business objects, and how they are connected to each other.</strong>
                     </>
+                  ) : section.content?.includes('Business Home') ? (
+                    <>
+                      My partners and I decided <strong>we wanted to create a 'Business Home' page</strong> where users can access data, products, and insights about their small business in a single, cohesive digital forum.
+                    </>
+                  ) : section.content?.includes('single product') ? (
+                    <>
+                      For our MVP, we decided to keep our demographic to <strong>single product, single business customers</strong> to keep the scope small and use an iterative approach to scale the page.
+                    </>
+                  ) : section.content?.includes('complete confidence') ? (
+                    <>
+                      After several rounds of design iteration, our team recognized that given the novelty and significance of this feature, <strong>complete confidence in a 'perfect' solution would only come with real-world usage and feedback.</strong>
+                    </>
+                  ) : section.content?.includes('existing products') ? (
+                    <>
+                      We crafted the content and visuals on the page using data we already had access to. To encourage exploration, we funneled users to our <strong>existing products and features with high engagement</strong> through thoughtful links and visualizations. We also added a feedback touchpoint as an easy way for users to share their thoughts in their own words, complementing the behavioral insights we were already gathering behind the scenes. Here's a visual breakdown of the page:
+                    </>
                   ) : (
                     section.content
                   )}
@@ -423,10 +470,20 @@ export default function ProjectDetail() {
             case 'project-details':
               return (
                 <div key={index} className="my-8 text-xs text-black space-y-2 font-bricolage">
-                  <div><strong>Company:</strong> Capital One (small business card team)</div>
-                  <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
-                  <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
-                  <div><strong>Role:</strong> UX designer (project lead)</div>
+                  {section.content ? (
+                    section.content.split(', ').map((detail, detailIndex) => (
+                      <div key={detailIndex}>
+                        <strong>{detail.split(':')[0]}:</strong> {detail.split(':')[1]}
+                      </div>
+                    ))
+                  ) : (
+                    <>
+                      <div><strong>Company:</strong> Capital One (small business card team)</div>
+                      <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
+                      <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
+                      <div><strong>Role:</strong> UX designer (project lead)</div>
+                    </>
+                  )}
                 </div>
               );
             case 'problem-statement':
@@ -434,9 +491,7 @@ export default function ProjectDetail() {
                 <div key={index} className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
                   <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
                   <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
-                    82% of small business customers reported that being able to view business and personal accounts 
-                    separately after logging into online banking is important—yet they were using consumer-centric 
-                    interfaces, contributing to financial risk and usability issues.
+                    {section.content || "82% of small business customers reported that being able to view business and personal accounts separately after logging into online banking is important—yet they were using consumer-centric interfaces, contributing to financial risk and usability issues."}
                   </h3>
                 </div>
               );
@@ -571,6 +626,21 @@ export default function ProjectDetail() {
                       <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
                     </div>
                   ))}
+                </div>
+              );
+            case 'three-column-custom':
+              return (
+                <div key={index} className="my-8">
+                  <div className="grid grid-cols-3 gap-6">
+                    {section.columns?.map((column, columnIndex) => (
+                      <div key={columnIndex}>
+                        <h3 className="text-xs font-bold text-black font-bricolage mb-3">{column.title}</h3>
+                        <p className="text-xs text-black font-bricolage leading-relaxed">
+                          {column.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               );
             default:
