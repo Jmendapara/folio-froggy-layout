@@ -7,8 +7,13 @@ const projectContent = {
     title: "Object oriented design: How we're using data to define the future of business experiences",
     sections: [
       {
-        type: "text",
-        content: "Object oriented business development that better align to your business and personal outcomes separately after requiring from online banking is important—just they were using customer-centric framework, streamlining to financial risk and usability terms."
+        type: "image"
+      },
+      {
+        type: "project-details"
+      },
+      {
+        type: "problem-statement"
       },
       {
         type: "heading",
@@ -19,41 +24,59 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "I set a point research many people made by INTRO to them via machine learning to understand customer service and balance interactions. We pick a point around how many people manage to streamline interaction service and balance financial access."
+        content: "In Q4 of 2022, I conducted a user research study to further validate the customer need for a separated business and personal banking experience. Here were the major takeaways from the study:"
       },
       {
-        type: "text",
-        content: "Research summary"
-      },
-      {
-        type: "text",
-        content: "Current digital business marketing efforts on our customer experience throughout the business framework to our customer experience..."
+        type: "image-text"
       },
       {
         type: "heading",
         content: "Object oriented design framework"
       },
       {
-        type: "image"
+        type: "text-bold",
+        content: "I used the object oriented design framework to approach this problem. It is the process of \"putting object design before procedural action design and thinking about a system through the lens of the real-world objects in a user's mental model (products, tutorials, locations), not digital-world actions (search, filter, compare, check out)\" -Sophia V. Prater from 'Object Oriented Design'."
       },
       {
         type: "heading",
         content: "Why object oriented design?"
       },
       {
+        type: "four-column"
+      },
+      {
         type: "text",
-        content: "Based upon customer data and our key business understanding of how we can improve object relationships connected with current business strategy and framework to our information. The following outlines product goals."
+        content: "We leveraged this framework to help us answer the following questions about a separated business experience:"
       },
       {
         type: "heading",
         content: "Our application of object oriented design"
       },
       {
-        type: "image"
+        type: "image-caption",
+        content: "My design partner and I white boarding how our available customer data can be used to group all of their business accounts under a single login."
       },
       {
         type: "text",
-        content: "A strategy framework is built to interact with customer service that can create a powerful set for our most customer leaders to help to effectively enable us how objects and customer relationships and balance customer data flows..."
+        content: "After doing a thorough audit of the customer and account data that we have available today, I pulled in one of my design partners to help me leverage the object oriented design framework."
+      },
+      {
+        type: "text-bold",
+        content: "We focused specifically on the user to business object relationship as they were our biggest points of ambiguity based on our research when trying to understand how the data for a multi-profile banking experience would be structured."
+      },
+      {
+        type: "text-bold",
+        content: "We workshopped both in-person and virtually to organize the data into logical groupings that informed us of any dependencies."
+      },
+      {
+        type: "text-bold",
+        content: "We were able to understand what makes up both user and business objects, and how they are connected to each other."
+      },
+      {
+        type: "major-takeaway"
+      },
+      {
+        type: "image-text"
       },
       {
         type: "heading",
@@ -63,27 +86,19 @@ const projectContent = {
         type: "image"
       },
       {
+        type: "text",
+        content: "We were able to map out a new business-centric user experience that clearly defined the relationship between our backend engineering and how that relates to the user experience on the front end. I narrated this relationship through the lens of a customer journey:"
+      },
+      {
+        type: "carousel-caption",
+        content: "My slide deck presentation that I shared out to design, product, and tech partners."
+      },
+      {
         type: "heading",
         content: "The impact"
       },
       {
-        type: "stats",
-        stats: [
-          { number: "64%", description: "Decrease in operational costs to fintech" },
-          { number: "21%", description: "Costs reduced by a business implementing UX" },
-          { number: "$1.7m", description: "Estimated indirect revenues from servicing costs" }
-        ]
-      },
-      {
-        type: "heading",
-        content: "Next steps"
-      },
-      {
-        type: "text",
-        content: "We discovered that up some understanding to understand why a lot of information detail revealed to our management discovery that most details are to outline A full page payment detailed page which will give us flow service to introduce most new segment aligned as our product gained."
-      },
-      {
-        type: "image"
+        type: "three-column"
       }
     ]
   },
@@ -357,6 +372,30 @@ export default function ProjectDetail() {
                   {section.content}
                 </p>
               );
+            case 'text-bold':
+              return (
+                <p key={index} className="text-xs text-black leading-relaxed font-bricolage">
+                  {section.content?.includes('object oriented design framework') ? (
+                    <>
+                      I used the <strong>object oriented design framework</strong> to approach this problem. It is the process of "<strong>putting object design before procedural action design</strong> and thinking about a system through the lens of the real-world objects in a user's mental model (products, tutorials, locations), not digital-world actions (search, filter, compare, check out)" -Sophia V. Prater from 'Object Oriented Design'.
+                    </>
+                  ) : section.content?.includes('focused specifically') ? (
+                    <>
+                      We <strong>focused specifically on the user to business object relationship</strong> as they were our biggest points of ambiguity based on our research when trying to understand how the data for a multi-profile banking experience would be structured.
+                    </>
+                  ) : section.content?.includes('workshopped') ? (
+                    <>
+                      We <strong>workshopped both in-person and virtually</strong> to organize the data into logical groupings that informed us of any dependencies.
+                    </>
+                  ) : section.content?.includes('what makes up') ? (
+                    <>
+                      We were able to understand <strong>what makes up both user and business objects, and how they are connected to each other.</strong>
+                    </>
+                  ) : (
+                    section.content
+                  )}
+                </p>
+              );
             case 'image':
               return (
                 <div key={index}>
@@ -367,133 +406,160 @@ export default function ProjectDetail() {
                     style={{ aspectRatio: '900/370', borderRadius: '0px' }}
                   />
                   <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>Image description placeholder</p>
-                  
-                  {/* Add project details and problem statement after first image */}
-                  {index === 2 && (
-                    <>
-                      {/* Project Details Component */}
-                      <div className="my-8 text-xs text-black space-y-2 font-bricolage">
-                        <div><strong>Company:</strong> Capital One (small business card team)</div>
-                        <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
-                        <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
-                        <div><strong>Role:</strong> UX designer (project lead)</div>
-                      </div>
-                      
-                      {/* Problem Statement Component */}
-                      <div className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
-                        <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
-                        <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
-                          82% of small business customers reported that being able to view business and personal accounts 
-                          separately after logging into online banking is important—yet they were using consumer-centric 
-                          interfaces, contributing to financial risk and usability issues.
-                        </h3>
-                      </div>
-
-                      {/* Carousel Component */}
-                      <div className="my-8">
-                        <Carousel className="w-full max-w-3xl mx-auto">
-                           <CarouselContent>
-                            <CarouselItem>
-                              <img 
-                                src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
-                                alt="Carousel image 1"
-                                className="w-full"
-                                style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                              />
-                            </CarouselItem>
-                            <CarouselItem>
-                              <img 
-                                src={`https://picsum.photos/900/370?random=${200 + Math.random()}`}
-                                alt="Carousel image 2"
-                                className="w-full"
-                                style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                              />
-                            </CarouselItem>
-                            <CarouselItem>
-                              <img 
-                                src={`https://picsum.photos/900/370?random=${300 + Math.random()}`}
-                                alt="Carousel image 3"
-                                className="w-full"
-                                style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                              />
-                            </CarouselItem>
-                          </CarouselContent>
-                          <CarouselPrevious className="bg-white border-gray-300">
-                            <ChevronLeft className="h-4 w-4" />
-                          </CarouselPrevious>
-                          <CarouselNext className="bg-white border-gray-300">
-                            <ChevronRight className="h-4 w-4" />
-                          </CarouselNext>
-                        </Carousel>
-                        <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>
-                          This carousel showcases the user interface designs and wireframes developed during the research phase.
-                        </p>
-                      </div>
-
-                      {/* Four Column Component */}
-                      <div className="my-8">
-                        <h2 className="text-[24px] font-bold font-rufina mb-6" style={{ color: '#0C5949' }}>Key Features</h2>
-                        <div className="grid grid-cols-4 gap-6">
-                          <div>
-                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
-                            <p className="text-xs text-black font-bricolage leading-relaxed">
-                              Conducted comprehensive user interviews and surveys to understand customer pain points and needs.
-                            </p>
-                          </div>
-                          <div>
-                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Design Framework</h3>
-                            <p className="text-xs text-black font-bricolage leading-relaxed">
-                              Developed a scalable object-oriented design system that separates business and personal banking experiences.
-                            </p>
-                          </div>
-                          <div>
-                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Implementation</h3>
-                            <p className="text-xs text-black font-bricolage leading-relaxed">
-                              Created detailed specifications and worked with development teams to ensure proper implementation.
-                            </p>
-                          </div>
-                          <div>
-                            <h3 className="text-xs font-bold text-black font-bricolage mb-3">Validation</h3>
-                            <p className="text-xs text-black font-bricolage leading-relaxed">
-                              Performed usability testing and gathered feedback to validate design decisions and iterate on solutions.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Image and Text Component */}
-                      <div className="my-8 flex gap-8">
-                        <div className="flex-1">
-                          <h2 className="text-[24px] font-bold font-rufina mb-4" style={{ color: '#0C5949' }}>Design Process</h2>
-                          <div className="space-y-4">
-                            <div>
-                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Discovery Phase</h3>
-                              <p className="text-xs text-black font-bricolage leading-relaxed">
-                                We began with extensive user research to understand the current pain points in the existing interface.
-                              </p>
-                            </div>
-                            <div>
-                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Ideation</h3>
-                              <p className="text-xs text-black font-bricolage leading-relaxed">
-                                Brainstormed solutions with cross-functional teams to address the separation of business and personal accounts.
-                              </p>
-                            </div>
-                            <div>
-                              <h3 className="text-xs font-bold text-black font-bricolage mb-2">Testing</h3>
-                              <p className="text-xs text-black font-bricolage leading-relaxed">
-                                Conducted usability tests to validate our design decisions and iterate on the solutions.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="w-80">
-                          <div className="w-full bg-placeholder" style={{ aspectRatio: '300/400', borderRadius: '0px' }}>
-                          </div>
-                          <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Process diagram</p>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                </div>
+              );
+            case 'image-caption':
+              return (
+                <div key={index}>
+                  <img 
+                    src={`https://picsum.photos/900/370?random=${index + Math.random()}`}
+                    alt="Project image"
+                    className="w-full mt-6"
+                    style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                  />
+                  <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>{section.content}</p>
+                </div>
+              );
+            case 'project-details':
+              return (
+                <div key={index} className="my-8 text-xs text-black space-y-2 font-bricolage">
+                  <div><strong>Company:</strong> Capital One (small business card team)</div>
+                  <div><strong>Timeline:</strong> January 2023 - August 2023 (side of desk project)</div>
+                  <div><strong>Tools & methodologies:</strong> Information architecture diagramming, object oriented design</div>
+                  <div><strong>Role:</strong> UX designer (project lead)</div>
+                </div>
+              );
+            case 'problem-statement':
+              return (
+                <div key={index} className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
+                  <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
+                  <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
+                    82% of small business customers reported that being able to view business and personal accounts 
+                    separately after logging into online banking is important—yet they were using consumer-centric 
+                    interfaces, contributing to financial risk and usability issues.
+                  </h3>
+                </div>
+              );
+            case 'image-text':
+              return (
+                <div key={index} className="my-8 flex gap-8">
+                  <div className="flex-1">
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Research Insights</h3>
+                    <p className="text-xs text-black font-bricolage leading-relaxed">
+                      Through extensive user research, we identified key pain points in the current banking experience and opportunities for improvement.
+                    </p>
+                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4">
+                      The data revealed critical gaps between user expectations and the current system capabilities.
+                    </p>
+                  </div>
+                  <div className="w-80">
+                    <img 
+                      src={`https://picsum.photos/300/400?random=${index + Math.random()}`}
+                      alt="Research insights"
+                      className="w-full"
+                      style={{ aspectRatio: '300/400', borderRadius: '0px' }}
+                    />
+                    <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Research findings visualization</p>
+                  </div>
+                </div>
+              );
+            case 'four-column':
+              return (
+                <div key={index} className="my-8">
+                  <div className="grid grid-cols-4 gap-6">
+                    <div>
+                      <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
+                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                        Conducted comprehensive user interviews and surveys to understand customer pain points and needs.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-black font-bricolage mb-3">Design Framework</h3>
+                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                        Developed a scalable object-oriented design system that separates business and personal banking experiences.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-black font-bricolage mb-3">Implementation</h3>
+                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                        Created detailed specifications and worked with development teams to ensure proper implementation.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-black font-bricolage mb-3">Validation</h3>
+                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                        Performed usability testing and gathered feedback to validate design decisions and iterate on solutions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            case 'major-takeaway':
+              return (
+                <div key={index} className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
+                  <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Major takeaway</div>
+                  <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
+                    All customers are 'user' objects, some of which have a relationship with a business entity.
+                  </h3>
+                </div>
+              );
+            case 'carousel-caption':
+              return (
+                <div key={index} className="my-8">
+                  <Carousel className="w-full max-w-3xl mx-auto">
+                    <CarouselContent>
+                      <CarouselItem>
+                        <img 
+                          src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
+                          alt="Carousel image 1"
+                          className="w-full"
+                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                        />
+                      </CarouselItem>
+                      <CarouselItem>
+                        <img 
+                          src={`https://picsum.photos/900/370?random=${200 + Math.random()}`}
+                          alt="Carousel image 2"
+                          className="w-full"
+                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                        />
+                      </CarouselItem>
+                      <CarouselItem>
+                        <img 
+                          src={`https://picsum.photos/900/370?random=${300 + Math.random()}`}
+                          alt="Carousel image 3"
+                          className="w-full"
+                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                        />
+                      </CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className="bg-white border-gray-300">
+                      <ChevronLeft className="h-4 w-4" />
+                    </CarouselPrevious>
+                    <CarouselNext className="bg-white border-gray-300">
+                      <ChevronRight className="h-4 w-4" />
+                    </CarouselNext>
+                  </Carousel>
+                  <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>
+                    {section.content}
+                  </p>
+                </div>
+              );
+            case 'three-column':
+              return (
+                <div key={index} className="flex justify-between items-center my-8 py-8">
+                  <div className="text-center">
+                    <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>64%</h3>
+                    <div className="text-xs text-black font-bricolage mt-2">Decrease in operational costs to fintech</div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>21%</h3>
+                    <div className="text-xs text-black font-bricolage mt-2">Costs reduced by a business implementing UX</div>
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>$1.7m</h3>
+                    <div className="text-xs text-black font-bricolage mt-2">Estimated indirect revenues from servicing costs</div>
+                  </div>
                 </div>
               );
             case 'stats':
