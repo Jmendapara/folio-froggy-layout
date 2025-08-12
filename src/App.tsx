@@ -17,19 +17,21 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <PasswordGate>
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<UXDesign />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/project/:projectId" element={<ProjectDetail />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </PasswordGate>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<UXDesign />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/project/:projectId" element={
+              <PasswordGate>
+                <ProjectDetail />
+              </PasswordGate>
+            } />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

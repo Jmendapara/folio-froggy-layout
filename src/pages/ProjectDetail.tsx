@@ -591,7 +591,7 @@ export default function ProjectDetail() {
             case 'three-column-detailed':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
                         <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>{column.title}</h3>
@@ -609,13 +609,15 @@ export default function ProjectDetail() {
               );
             case 'three-column-stats':
               return (
-                <div key={index} className="flex justify-between items-center my-8 py-8">
-                  {section.stats?.map((stat, statIndex) => (
-                    <div key={statIndex} className="text-center">
-                      <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
-                      <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
-                    </div>
-                  ))}
+                <div key={index} className="my-8 py-8">
+                  <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+                    {section.stats?.map((stat, statIndex) => (
+                      <div key={statIndex} className="text-center">
+                        <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
+                        <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               );
             case 'stats':
@@ -632,7 +634,7 @@ export default function ProjectDetail() {
             case 'three-column-custom':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
                         <h3 className="text-xs font-bold text-black font-bricolage mb-3">{column.title}</h3>

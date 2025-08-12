@@ -36,8 +36,8 @@ export default function Sidebar({ onItemClick }: SidebarProps = {}) {
         </ul>
       </nav>
       
-      {/* Frog illustration at bottom */}
-      <div className="px-6 pb-8">
+      {/* Frog illustration at bottom - hidden on mobile */}
+      <div className="px-6 pb-8 hidden md:block">
         <img
           src={wompWompImage}
           alt="Womp womp illustration"

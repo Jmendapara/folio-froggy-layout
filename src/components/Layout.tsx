@@ -42,7 +42,7 @@ export default function Layout({ children }: LayoutProps) {
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed top-16 right-0 h-full w-64 bg-sidebar z-50">
+          <div className="fixed top-16 left-0 h-full w-full bg-sidebar z-50">
             <Sidebar onItemClick={() => setIsMobileMenuOpen(false)} />
           </div>
         </>
