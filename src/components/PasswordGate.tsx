@@ -25,8 +25,8 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Empty string password means any input is accepted
-    if (password.trim() === '') {
+    // Check for correct password
+    if (password !== 'froggyfolio') {
       setShowError(true);
       return;
     }
