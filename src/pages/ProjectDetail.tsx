@@ -213,27 +213,27 @@ const projectContent = {
     title: "An exploration servicing design: How can we better connect our customer service agents to our end users and their pain points?",
     sections: [
       {
+        type: "image"
+      },
+      {
+        type: "project-details",
+        content: "Company: Capital One (Small business card Accounts Payable team), Timeline: November 2023 - January 2024, Tools & methodologies: User research, prototyping, UI design, service design, Role: UX designer (design lead)"
+      },
+      {
         type: "heading",
         content: "Background"
       },
       {
         type: "text",
-        content: "Capital One offers small business agents an accounts payable solution positioned by our third-party partner, Melio that offers easy point experience to the delivered B2 their workflow as an after care engagement layer."
+        content: "Capital One offers small business users an accounts payable solution (powered by our third party partner, Melio) that allows any card payment to be delivered to their vendor as an alternate payment type."
       },
       {
-        type: "image"
+        type: "image-caption",
+        content: "If the cardholder decides to deliver their payment as a virtual card, they incur no fees while also earning rewards on their card. Other payment delivery options include ACH transfers or checks."
       },
       {
-        type: "text",
-        content: "The agent and our resources to deliver on this segment and a virtual solution helping business users most core point segment delivery delivery delivery solution to provide solution of various."
-      },
-      {
-        type: "text",
-        content: "Problem statement"
-      },
-      {
-        type: "text",
-        content: "Unable to leverage customer payment data prevents agents from reaching issues within our Accounts Payable products, resulting in long service times, frequent transfers to our third-party partner Melio, and dropped calls. As a result, 65% of cases are handed off to Melio, with no visibility into resolution outcomes."
+        type: "problem-statement",
+        content: "Limited access to customer payment data prevents agents from resolving issues within our Accounts Payable product, resulting in long service times, frequent transfers to our third-party partner Melio, and dropped calls. As a result, 63% of cases are handed off to Melio, with no visibility into resolution outcomes."
       },
       {
         type: "heading",
@@ -241,18 +241,15 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "We know that solution to build a more robust and coherent accounts payable agent experience that great agents into information and tools they needed to better an a easier to lead their service and experience benefit."
+        content: "My team and I aimed to build a more detailed and cohesive Accounts Payable agent experience that gave agents the information and tools they needed in order to self service our customers better."
       },
       {
         type: "text",
-        content: "We believe that this digital way to be the think and help businesses from MELIO AP to launch a business view for once competes before within that servicing platform designed to keep track they these new that Melio important we also offering helpful receiving view after resolution during experiences."
+        content: "We decided that the best way to do this was to pull payment data from Melio's API to build a timeline view for each payment's status within the servicing platform (Empath). In the case that there was a failed payment, we also display failure reasons, along with troubleshooting directions."
       },
       {
-        type: "image"
-      },
-      {
-        type: "text",
-        content: "Should we the payment answer design in at the really viewpoint structure follow On too lights and new and impact center for use at a servicing agent view payable view."
+        type: "image-caption",
+        content: "Shown are the payment drawer designs with the newly designed timeline view. On the right are two use cases for what a servicing agent could possibly see."
       },
       {
         type: "heading",
@@ -260,74 +257,38 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "To validate our hypothesis that agents will be able to resolve and solve that they required information to help Accounts Payable users I conducted a usability test."
+        content: "To validate our hypotheses that agents will be able to quickly and easily find the needed information to help Accounts Payable users, I conducted a usability test:"
       },
       {
         type: "image"
       },
       {
-        type: "text",
-        content: "Based on the feedback across feedback on the call feedback based on our financial ability and providing would not very helpful during more testing along."
-      },
-      {
-        type: "heading",
-        content: "Methodology"
-      },
-      {
-        type: "text",
-        content: "• Interviewed conducted user"
-      },
-      {
-        type: "text",
-        content: "• Exact testing and improvement business feedback testing to research"
-      },
-      {
-        type: "text",
-        content: "• Definitions on testing for complexity of service and"
-      },
-      {
-        type: "text",
-        content: "• Service and — understand features that could be added"
-      },
-      {
-        type: "text",
-        content: "All participants were Capital One business customers within one solution experience, both On too lights and new and improvements our new work with the local product and design team."
-      },
-      {
-        type: "heading",
-        content: "Goals"
-      },
-      {
-        type: "text",
-        content: "• Exact testing and improvement"
-      },
-      {
-        type: "text",
-        content: "• Service and 1 expert solutions"
-      },
-      {
-        type: "text",
-        content: "• Definitions to testing for provide our"
-      },
-      {
-        type: "text",
-        content: "• Defining multiple customer would give out helpful during more testing along as providing would not very helpful during testing along providing would not very helpful during more testing along."
-      },
-      {
-        type: "heading",
-        content: "Results"
-      },
-      {
-        type: "text",
-        content: "• We collect positive feedback on the UI feedback provided by on our thinking"
-      },
-      {
-        type: "text",
-        content: "• Service feedback business and important feedback"
-      },
-      {
-        type: "text",
-        content: "• providing would not very helpful during more testing along providing would not very helpful during more testing along."
+        type: "three-column-detailed",
+        columns: [
+          {
+            title: "Methodology",
+            points: [
+              "Moderated usability test",
+              "5 servicing agents were asked a series of questions and servicing scenarios regarding Accounts Payable that they had to walk through given a Pay Vendors Empath prototype",
+              "All participants were Capital One business credit card agents"
+            ]
+          },
+          {
+            title: "Goals",
+            points: [
+              "Gauge feelings and impressions surrounding new Empath experience",
+              "Determine usability for completing a servicing call",
+              "Get thoughts on additional features that could be added"
+            ]
+          },
+          {
+            title: "Results",
+            points: [
+              "We got very positive feedback on the timeline view of the container, and most agents said the information we are providing would be very helpful during their servicing calls",
+              "Agents were open to even more information if possible, including definitions of the different timeline dates"
+            ]
+          }
+        ]
       },
       {
         type: "heading",
@@ -335,14 +296,23 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "After launching our new servicing business, we checked a few variation method first few some solution institution"
+        content: "After launching the new servicing features, we tracked a few success metrics that had some positive numbers:"
       },
       {
-        type: "stats",
+        type: "three-column-stats",
         stats: [
-          { number: "64%", description: "Decrease in transfers to Melio" },
-          { number: "21%", description: "Costs reduced in platform implementing UX" },
-          { number: "$1.7m", description: "In purchase indirect revenues from servicing costs" }
+          {
+            title: "64%",
+            description: "Decrease in transfer rate to Melio"
+          },
+          {
+            title: "21%",
+            description: "Calls resulting in agents recommending AP"
+          },
+          {
+            title: "$1.7m",
+            description: "In purchase volume increase via servicing calls"
+          }
         ]
       },
       {
@@ -351,14 +321,15 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "We discovered that we were streamlining to understand why a lot of information detail revealed in our management discovery that most details are to outline A full page payment detailed page which will give us flow service to introduce most new segment aligned as our product gained."
+        content: "We understood that we were attempting to communicate a lot of information and visuals in one collapsable drawer. Our next steps are to create a full page payment details page, which will give us the real estate to include even more payment details as our product grows."
       },
       {
         type: "text",
-        content: "I worked creating a independently to environment of this skill, and conducted this work with the local product and design team."
+        content: "I started ideating independently in anticipation of this shift, and socialized this work with my local product and design team."
       },
       {
-        type: "image"
+        type: "image-caption",
+        content: "My initial ideations of a full screen view using our servicing specific design system. This page would be accessible by click"
       }
     ]
   }
@@ -615,6 +586,36 @@ export default function ProjectDetail() {
                     <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>$1.7m</h3>
                     <div className="text-xs text-black font-bricolage mt-2">Estimated indirect revenues from servicing costs</div>
                   </div>
+                </div>
+              );
+            case 'three-column-detailed':
+              return (
+                <div key={index} className="my-8">
+                  <div className="grid grid-cols-3 gap-6">
+                    {section.columns?.map((column, columnIndex) => (
+                      <div key={columnIndex}>
+                        <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>{column.title}</h3>
+                        <ul className="space-y-2">
+                          {column.points?.map((point, pointIndex) => (
+                            <li key={pointIndex} className="text-xs text-black font-bricolage leading-relaxed">
+                              • {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            case 'three-column-stats':
+              return (
+                <div key={index} className="flex justify-between items-center my-8 py-8">
+                  {section.stats?.map((stat, statIndex) => (
+                    <div key={statIndex} className="text-center">
+                      <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
+                      <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
+                    </div>
+                  ))}
                 </div>
               );
             case 'stats':

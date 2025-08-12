@@ -8,6 +8,7 @@ import UXDesign from "./pages/UXDesign";
 import Resume from "./pages/Resume";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import PasswordGate from "./components/PasswordGate";
 
 const queryClient = new QueryClient();
 
@@ -16,17 +17,19 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<UXDesign />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/project/:projectId" element={<ProjectDetail />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <PasswordGate>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<UXDesign />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/project/:projectId" element={<ProjectDetail />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </PasswordGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
