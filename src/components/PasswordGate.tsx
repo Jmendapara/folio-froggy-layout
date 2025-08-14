@@ -62,7 +62,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
                 setPassword(e.target.value);
                 setShowError(false);
               }}
-              className="pr-12 border-border/20 focus:border-primary"
+              className="pr-12 border-border/20 focus:border-primary rounded-none"
               autoFocus
             />
             <Button
@@ -74,11 +74,13 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
-          {showError && (
-            <p className="text-sm text-destructive text-center">
-              The password was wrong
-            </p>
-          )}
+          <div className="h-6 flex items-center justify-center">
+            {showError && (
+              <p className="text-sm text-destructive text-center">
+                The password you entered is incorrect. Please try again.
+              </p>
+            )}
+          </div>
         </form>
       </div>
     </div>

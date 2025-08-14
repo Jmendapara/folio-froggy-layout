@@ -364,7 +364,7 @@ export default function ProjectDetail() {
           switch (section.type) {
             case 'heading':
               return (
-                <h2 key={index} className="text-[24px] font-bold font-rufina mt-8 mb-4" style={{ color: '#0C5949' }}>
+                <h2 key={index} className="text-[24px] font-bold font-rufina mt-12 mb-4" style={{ color: '#0C5949' }}>
                   {section.content}
                 </h2>
               );
@@ -468,7 +468,7 @@ export default function ProjectDetail() {
               );
             case 'image-text':
               return (
-                <div key={index} className="my-8 flex gap-8">
+                <div key={index} className="my-8 flex flex-col md:flex-row gap-8">
                   <div className="flex-1">
                     <h3 className="text-xs font-bold text-black font-bricolage mb-2">Research Insights</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed">
@@ -478,7 +478,7 @@ export default function ProjectDetail() {
                       The data revealed critical gaps between user expectations and the current system capabilities.
                     </p>
                   </div>
-                  <div className="w-80">
+                  <div className="w-full md:w-80">
                     <img 
                       src={`https://picsum.photos/300/400?random=${index + Math.random()}`}
                       alt="Research insights"
@@ -492,7 +492,7 @@ export default function ProjectDetail() {
             case 'four-column':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-4 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
                       <p className="text-xs text-black font-bricolage leading-relaxed">
@@ -532,7 +532,7 @@ export default function ProjectDetail() {
             case 'carousel-caption':
               return (
                 <div key={index} className="my-8">
-                  <Carousel className="w-full max-w-3xl mx-auto">
+                  <Carousel className="w-full max-w-3xl mx-auto px-4 md:px-0">
                     <CarouselContent>
                       <CarouselItem>
                         <img 
@@ -559,10 +559,10 @@ export default function ProjectDetail() {
                         />
                       </CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious className="bg-white border-gray-300">
+                    <CarouselPrevious className="bg-white border-gray-300 left-2 md:left-4">
                       <ChevronLeft className="h-4 w-4" />
                     </CarouselPrevious>
-                    <CarouselNext className="bg-white border-gray-300">
+                    <CarouselNext className="bg-white border-gray-300 right-2 md:right-4">
                       <ChevronRight className="h-4 w-4" />
                     </CarouselNext>
                   </Carousel>
@@ -573,7 +573,7 @@ export default function ProjectDetail() {
               );
             case 'three-column':
               return (
-                <div key={index} className="flex justify-between items-center my-8 py-8">
+                <div key={index} className="flex flex-col md:flex-row justify-between items-center my-8 py-8 gap-6 md:gap-0">
                   <div className="text-center">
                     <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>64%</h3>
                     <div className="text-xs text-black font-bricolage mt-2">Decrease in operational costs to fintech</div>
