@@ -532,37 +532,37 @@ export default function ProjectDetail() {
             case 'carousel-caption':
               return (
                 <div key={index} className="my-8">
-                  <Carousel className="w-full max-w-3xl mx-auto px-4 md:px-0">
-                    <CarouselContent>
-                      <CarouselItem>
-                        <img 
-                          src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
-                          alt="Carousel image 1"
-                          className="w-full"
-                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                        />
-                      </CarouselItem>
-                      <CarouselItem>
-                        <img 
-                          src={`https://picsum.photos/900/370?random=${200 + Math.random()}`}
-                          alt="Carousel image 2"
-                          className="w-full"
-                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                        />
-                      </CarouselItem>
-                      <CarouselItem>
-                        <img 
-                          src={`https://picsum.photos/900/370?random=${300 + Math.random()}`}
-                          alt="Carousel image 3"
-                          className="w-full"
-                          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                        />
-                      </CarouselItem>
-                    </CarouselContent>
-                    <CarouselPrevious className="bg-white border-gray-300 left-2 md:left-4">
-                      <ChevronLeft className="h-4 w-4" />
-                    </CarouselPrevious>
-                    <CarouselNext className="bg-white border-gray-300 right-2 md:right-4">
+                   <Carousel className="w-full max-w-3xl mx-auto">
+                     <CarouselContent className="md:px-0 px-8">
+                       <CarouselItem>
+                         <img 
+                           src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
+                           alt="Carousel image 1"
+                           className="w-full"
+                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                         />
+                       </CarouselItem>
+                       <CarouselItem>
+                         <img 
+                           src={`https://picsum.photos/900/370?random=${200 + Math.random()}`}
+                           alt="Carousel image 2"
+                           className="w-full"
+                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                         />
+                       </CarouselItem>
+                       <CarouselItem>
+                         <img 
+                           src={`https://picsum.photos/900/370?random=${300 + Math.random()}`}
+                           alt="Carousel image 3"
+                           className="w-full"
+                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                         />
+                       </CarouselItem>
+                     </CarouselContent>
+                     <CarouselPrevious className="bg-white border-gray-300 left-0 md:left-4">
+                       <ChevronLeft className="h-4 w-4" />
+                     </CarouselPrevious>
+                     <CarouselNext className="bg-white border-gray-300 right-0 md:right-4">
                       <ChevronRight className="h-4 w-4" />
                     </CarouselNext>
                   </Carousel>
