@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-const wompWompImage = "/lovable-uploads/7ff08a28-def2-4948-b182-141a786d4543.png";
+const wompWompImage = "/profile/froggy.png";
 
 const navigation = [
   { name: "UX design", href: "/" },

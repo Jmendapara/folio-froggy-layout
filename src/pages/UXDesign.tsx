@@ -11,21 +11,21 @@ export default function UXDesign() {
       title: "Object oriented design: How we're using data to define the future of business experiences",
       description: "Information architecture diagramming, object oriented design",
       duration: "January 2025 - August 2025",
-      image: "/lovable-uploads/105d1265-358e-48c5-b357-970420c776b5.png",
+      image: "/ood/1.png",
     },
     {
       id: "business-profile-space",
       title: "Building a business-centric profile space for small business owners within their banking platform",
       description: "User research, prototyping, UI design",
       duration: "May 2025 - August 2025, September 2024 - present",
-      image: "/lovable-uploads/7ff08a28-def2-4948-b182-141a786d4543.png",
+      image: "/business-dashboard/13.png",
     },
     {
       id: "payments-adoption",
       title: "A journey to increase adoption of our business payments solutions products",
       description: "User research, prototyping, UI design, data auditing",
       duration: "September 2025 - February 2024",
-      image: "/lovable-uploads/105d1265-358e-48c5-b357-970420c776b5.png",
+      image: "/empath/20.png",
     },
   ];
 

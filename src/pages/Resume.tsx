@@ -1,7 +1,7 @@
 export default function Resume() {
   const handleOpenPDF = () => {
     // Open PDF in new tab
-    window.open('/lovable-uploads/105d1265-358e-48c5-b357-970420c776b5.png', '_blank');
+    window.open('/profile/resume.png', '_blank');
   };
 
   return (

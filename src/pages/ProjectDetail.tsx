@@ -2,13 +2,15 @@ import { useParams, Navigate } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Cell } from "recharts";
 
 const projectContent = {
   "object-oriented-design": {
     title: "Object oriented design: How we're using data to define the future of business experiences",
     sections: [
       {
-        type: "image"
+        type: "image",
+        path: "/ood/1.png",
       },
       {
         type: "project-details"
@@ -21,18 +23,24 @@ const projectContent = {
         content: "Research"
       },
       {
-        type: "image"
+        type: "image",
+        path: "/ood/2.png"
       },
       {
         type: "text",
         content: "In Q4 of 2022, I conducted a user research study to further validate the customer need for a separated business and personal banking experience. Here were the major takeaways from the study:"
       },
       {
-        type: "image-text"
+        type: "image-text",
+        path: "/ood/3.png"
       },
       {
         type: "heading",
         content: "Object oriented design framework"
+      },
+      {
+        type: "image",
+        path: "/ood/4.png"
       },
       {
         type: "text-bold",
@@ -54,8 +62,8 @@ const projectContent = {
         content: "Our application of object oriented design"
       },
       {
-        type: "image-caption",
-        content: "My design partner and I white boarding how our available customer data can be used to group all of their business accounts under a single login."
+        type: "image",
+        path: "/ood/5.png"
       },
       {
         type: "text",
@@ -77,14 +85,16 @@ const projectContent = {
         type: "major-takeaway"
       },
       {
-        type: "image-text"
+        type: "image-text-2",
+        path: "/ood/6.png"
       },
       {
         type: "heading",
         content: "Customer journey mapping"
       },
       {
-        type: "image"
+        type: "image",
+        path: "/ood/7.png"
       },
       {
         type: "text",
@@ -92,6 +102,7 @@ const projectContent = {
       },
       {
         type: "carousel-caption",
+        imgs: ["/ood/8.png","/ood/9.png","/ood/10.png","/ood/11.png","/ood/12.png",],
         content: "My slide deck presentation that I shared out to design, product, and tech partners."
       },
       {
@@ -99,8 +110,28 @@ const projectContent = {
         content: "The impact"
       },
       {
-        type: "three-column"
-      }
+        type: "three-column-detailed",
+        columns: [
+          {
+            title: "1",
+            points: [
+              "Alignment with my tech and product partners on future roadmaps and goals",
+            ]
+          },
+          {
+            title: "2",
+            points: [
+              "Awareness of a technical heavy approach to product development across my design org"
+            ]
+          },
+          {
+            title: "3",
+            points: [
+              "Higher involvement in non-design practices and rituals alongside partners"
+            ]
+          }
+        ]
+      },
     ]
   },
   "business-profile-space": {
@@ -350,17 +381,6 @@ export default function ProjectDetail() {
     <div className="p-8 max-w-full">
       <h1 className="text-[32px] font-bold text-black font-rufina mb-8">{project.title}</h1>
       
-      {/* Hero Image */}
-      <div className="mb-6">
-        <img 
-          src={`https://picsum.photos/900/370?random=${Math.random()}`}
-          alt="Project overview"
-          className="w-full"
-          style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-        />
-        <p className="text-center text-xs font-bricolage" style={{ color: '#6B6B6B', marginTop: '16px' }}>Project overview image</p>
-      </div>
-      
       <div className="space-y-6">
         {project.sections.map((section, index) => {
           switch (section.type) {
@@ -420,19 +440,19 @@ export default function ProjectDetail() {
               return (
                 <div key={index}>
                   <img 
-                    src={`https://picsum.photos/900/370?random=${index + Math.random()}`}
+                    src={section.path}
                     alt="Project image"
                     className="w-full mt-6"
-                    style={{ aspectRatio: '900/370', borderRadius: '0px' }}
+                    style={{ borderRadius: '0px' }}
                   />
-                  <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>Image description placeholder</p>
+                  {section.caption ? <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>Image description placeholder</p> : null}
                 </div>
               );
             case 'image-caption':
               return (
                 <div key={index}>
                   <img 
-                    src={`https://picsum.photos/900/370?random=${index + Math.random()}`}
+                    src={section.path}
                     alt="Project image"
                     className="w-full mt-6"
                     style={{ aspectRatio: '900/370', borderRadius: '0px' }}
@@ -442,7 +462,7 @@ export default function ProjectDetail() {
               );
             case 'project-details':
               return (
-                <div key={index} className="my-8 text-xs text-black space-y-2 font-bricolage">
+                <div key={index} className="mt-8 mb-8 text-xs text-black space-y-1 font-bricolage">
                   {section.content ? (
                     section.content.split(', ').map((detail, detailIndex) => (
                       <div key={detailIndex}>
@@ -472,25 +492,55 @@ export default function ProjectDetail() {
               return (
                 <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
                   <div className="flex-1">
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Research Insights</h3>
-                    <p className="text-xs text-black font-bricolage leading-relaxed">
-                      Through extensive user research, we identified key pain points in the current banking experience and opportunities for improvement.
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4 mb-8">
+                    Participants seemed to appreciate the split, with no major experience downsides for consumers. Majority of users noted that an account separation would mitigate risk with accounts and contacts when handling financial transactions.
                     </p>
-                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4">
-                      The data revealed critical gaps between user expectations and the current system capabilities.
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
+                    After completing one task, users pivoted to understand the value of having separated business accounts. This validates that small business users find the split view structure intuitive and routine.
+                    </p>
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
+                    The cognitive load is easier with split accounts as it is cleaner and simple, reducing perceived financial risks.
                     </p>
                   </div>
-                  <div className="w-full md:w-80">
+                  <div className="w-full md:w-80 mx-8" style={{alignItems: "center", justifyContent: "center", display: "flex", flexDirection:"column"}}>
                     <img 
-                      src={`https://picsum.photos/300/400?random=${index + Math.random()}`}
+                      src={section.path}
                       alt="Research insights"
                       className="w-full"
-                      style={{ aspectRatio: '300/400', borderRadius: '0px' }}
+                      style={{ maxWidth: "200px", borderRadius: '0px' }}
                     />
                     <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Research findings visualization</p>
                   </div>
                 </div>
               );
+              case 'image-text-2':
+                return (
+                  <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
+                    <div className="flex-1 p-8">
+                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      Each <strong>green bubble represented a user object,</strong> each with different roles for their business
+                      </p>
+                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      <strong>Primary users</strong> (ex: Business owner) are the <strong>only user type allowed</strong> to open a business account
+                      </p>
+                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      This model serves as a <strong>valuable entry point for small business customers</strong> who are not already consumers to potentially use Capital One for their personal banking since they’ve already been onboarded with a consumer login.
+                      </p>
+                    </div>
+                    <div className="w-full md:w-80 mx-8" style={{alignItems: "center", justifyContent: "center", display: "flex", flexDirection:"column"}}>
+                      <img 
+                        src={section.path}
+                        alt="Research insights"
+                        className="w-full"
+                        style={{ maxWidth: "350px", borderRadius: '0px' }}
+                      />
+                      <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Research findings visualization</p>
+                    </div>
+                  </div>
+                );
             case 'four-column':
               return (
                 <div key={index} className="my-8">
@@ -534,32 +584,20 @@ export default function ProjectDetail() {
             case 'carousel-caption':
               return (
                  <div key={index} className="my-8">
-                   <Carousel className={`w-full mx-auto ${isMobile ? 'max-w-[90%]' : 'max-w-3xl'}`}>
+                   <Carousel className={`w-full mx-auto ${isMobile ? 'max-w-[90%]' : 'max-w'}`}>
                      <CarouselContent className={isMobile ? 'px-2' : 'md:px-0 px-8'}>
-                       <CarouselItem>
-                         <img 
-                           src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
-                           alt="Carousel image 1"
-                           className="w-full"
-                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                         />
-                       </CarouselItem>
-                       <CarouselItem>
-                         <img 
-                           src={`https://picsum.photos/900/370?random=${200 + Math.random()}`}
-                           alt="Carousel image 2"
-                           className="w-full"
-                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                         />
-                       </CarouselItem>
-                       <CarouselItem>
-                         <img 
-                           src={`https://picsum.photos/900/370?random=${300 + Math.random()}`}
-                           alt="Carousel image 3"
-                           className="w-full"
-                           style={{ aspectRatio: '900/370', borderRadius: '0px' }}
-                         />
-                       </CarouselItem>
+                     {section.imgs.map((img) => {
+                      return <CarouselItem>
+                      <img 
+                        src={img}
+                        alt="Carousel image 1"
+                        className="w-full"
+                        style={{ borderRadius: '0px' }}
+                      />
+                    </CarouselItem>
+                     }
+                    )}
+                      
                      </CarouselContent>
                      <CarouselPrevious 
                        className="bg-white border-gray-300" 
@@ -610,7 +648,7 @@ export default function ProjectDetail() {
                         <ul className="space-y-2">
                           {column.points?.map((point, pointIndex) => (
                             <li key={pointIndex} className="text-xs text-black font-bricolage leading-relaxed">
-                              • {point}
+                              {point}
                             </li>
                           ))}
                         </ul>
