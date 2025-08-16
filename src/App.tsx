@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import UXDesign from "./pages/UXDesign";
+import About from "./pages/About";
 import Resume from "./pages/Resume";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
@@ -21,6 +22,7 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<UXDesign />} />
+            <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/project/:projectId" element={
               <PasswordGate>

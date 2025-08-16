@@ -1,6 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectContent = {
   "object-oriented-design": {
@@ -337,6 +338,7 @@ const projectContent = {
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
+  const isMobile = useIsMobile();
   
   if (!projectId || !projectContent[projectId as keyof typeof projectContent]) {
     return <Navigate to="/" replace />;
@@ -364,7 +366,7 @@ export default function ProjectDetail() {
           switch (section.type) {
             case 'heading':
               return (
-                <h2 key={index} className="text-[24px] font-bold font-rufina mt-12 mb-4" style={{ color: '#0C5949' }}>
+                <h2 key={index} className="text-[24px] font-bold font-rufina mb-4" style={{ color: '#0C5949', marginTop: isMobile ? '24px' : '48px' }}>
                   {section.content}
                 </h2>
               );
@@ -468,7 +470,7 @@ export default function ProjectDetail() {
               );
             case 'image-text':
               return (
-                <div key={index} className="my-8 flex flex-col md:flex-row gap-8">
+                <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
                   <div className="flex-1">
                     <h3 className="text-xs font-bold text-black font-bricolage mb-2">Research Insights</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed">
@@ -492,7 +494,7 @@ export default function ProjectDetail() {
             case 'four-column':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-4'}`}>
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">User Research</h3>
                       <p className="text-xs text-black font-bricolage leading-relaxed">
@@ -531,9 +533,9 @@ export default function ProjectDetail() {
               );
             case 'carousel-caption':
               return (
-                <div key={index} className="my-8">
-                   <Carousel className="w-full max-w-3xl mx-auto">
-                     <CarouselContent className="md:px-0 px-8">
+                 <div key={index} className="my-8">
+                   <Carousel className={`w-full mx-auto ${isMobile ? 'max-w-[90%]' : 'max-w-3xl'}`}>
+                     <CarouselContent className={isMobile ? 'px-2' : 'md:px-0 px-8'}>
                        <CarouselItem>
                          <img 
                            src={`https://picsum.photos/900/370?random=${100 + Math.random()}`}
@@ -559,10 +561,20 @@ export default function ProjectDetail() {
                          />
                        </CarouselItem>
                      </CarouselContent>
-                     <CarouselPrevious className="bg-white border-gray-300 left-0 md:left-4">
+                     <CarouselPrevious 
+                       className="bg-white border-gray-300" 
+                       style={{ 
+                         left: isMobile ? '8px' : '16px' 
+                       }}
+                     >
                        <ChevronLeft className="h-4 w-4" />
                      </CarouselPrevious>
-                     <CarouselNext className="bg-white border-gray-300 right-0 md:right-4">
+                     <CarouselNext 
+                       className="bg-white border-gray-300" 
+                       style={{ 
+                         right: isMobile ? '8px' : '16px' 
+                       }}
+                     >
                       <ChevronRight className="h-4 w-4" />
                     </CarouselNext>
                   </Carousel>
@@ -573,7 +585,7 @@ export default function ProjectDetail() {
               );
             case 'three-column':
               return (
-                <div key={index} className="flex flex-col md:flex-row justify-between items-center my-8 py-8 gap-6 md:gap-0">
+                <div key={index} className={`my-8 py-8 gap-6 md:gap-0 ${isMobile ? 'flex flex-col' : 'flex flex-col md:flex-row justify-between items-center'}`}>
                   <div className="text-center">
                     <h3 className="text-[20px] font-bold" style={{ color: '#0B5451' }}>64%</h3>
                     <div className="text-xs text-black font-bricolage mt-2">Decrease in operational costs to fintech</div>
@@ -591,7 +603,7 @@ export default function ProjectDetail() {
             case 'three-column-detailed':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
                         <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>{column.title}</h3>
@@ -610,7 +622,7 @@ export default function ProjectDetail() {
             case 'three-column-stats':
               return (
                 <div key={index} className="my-8 py-8">
-                  <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+                  <div className={`gap-6 md:gap-0 ${isMobile ? 'flex flex-col' : 'flex flex-col md:flex-row justify-between items-center'}`}>
                     {section.stats?.map((stat, statIndex) => (
                       <div key={statIndex} className="text-center">
                         <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
@@ -634,7 +646,7 @@ export default function ProjectDetail() {
             case 'three-column-custom':
               return (
                 <div key={index} className="my-8">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
                         <h3 className="text-xs font-bold text-black font-bricolage mb-3">{column.title}</h3>

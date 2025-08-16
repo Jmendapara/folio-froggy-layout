@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function UXDesign() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   
   const projects = [
     {
@@ -51,11 +53,11 @@ export default function UXDesign() {
                 <h3 className="text-xs font-bold text-black leading-tight md:w-1/2 md:pr-4">
                   {project.title}
                 </h3>
-                <span className="text-xs font-bold text-[#696969] md:w-1/2 md:text-right">
+                <span className="text-xs font-bold text-[#696969] md:w-1/2 md:text-right md:mt-0" style={{ marginTop: isMobile ? '0px' : undefined }}>
                   {project.duration}
                 </span>
               </div>
-              <p className="text-xs font-bold text-[#696969]" style={{ marginTop: '0px' }}>
+              <p className="text-xs md:font-bold font-normal text-[#696969]" style={{ marginTop: '0px' }}>
                 {project.description}
               </p>
             </div>

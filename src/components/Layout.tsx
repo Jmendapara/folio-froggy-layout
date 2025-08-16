@@ -17,8 +17,8 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-background">
       {/* Mobile Header */}
       {isMobile && (
-        <header className={`fixed top-0 left-0 right-0 h-16 bg-background flex items-center justify-between px-4 z-50 ${!isMobileMenuOpen ? 'border-b border-gray-200' : 'border-b-0'}`}>
-          <h1 className="text-lg font-bold">Portfolio</h1>
+        <header className={`fixed top-0 left-0 right-0 h-16 bg-background flex items-center justify-between px-4 z-50 ${!isMobileMenuOpen ? 'border-b border-gray-200' : ''}`} style={{borderBottomWidth: isMobileMenuOpen ? '0px' : '1px'}}>
+          <h1 className="text-lg font-bold">Raina Gupta</h1>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2"
