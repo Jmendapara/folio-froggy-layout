@@ -15,7 +15,7 @@ export default function About() {
             <div 
               className="w-full bg-placeholder"
               style={{ aspectRatio: '4/5' }}
-            ></div>
+            ><img src="/profile/profilepic.png"></img></div>
           </div>
           
           {/* About Content */}
@@ -79,7 +79,7 @@ export default function About() {
             <div 
               className="w-full bg-placeholder"
               style={{ aspectRatio: '1/1' }}
-            ></div>
+            ><img src="/profile/pottery.png"></img></div>
             <h3 className="text-center font-medium text-foreground">Ceramics & pottery</h3>
           </div>
           
@@ -88,7 +88,7 @@ export default function About() {
             <div 
               className="w-full bg-placeholder"
               style={{ aspectRatio: '1/1' }}
-            ></div>
+            ><img src="/profile/africa.png"></img></div>
             <h3 className="text-center font-medium text-foreground">Film photography</h3>
           </div>
           
@@ -97,7 +97,7 @@ export default function About() {
             <div 
               className="w-full bg-placeholder"
               style={{ aspectRatio: '1/1' }}
-            ></div>
+            ><img src="/profile/market.png"></img></div>
             <h3 className="text-center font-medium text-foreground">Illustrating prints & merch</h3>
           </div>
         </div>
