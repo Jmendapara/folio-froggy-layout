@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Cell } from "recharts";
+import { useEffect } from "react";
 
 const projectContent = {
   "object-oriented-design": {
@@ -393,6 +394,10 @@ export default function ProjectDetail() {
   }
   
   const project = projectContent[projectId as keyof typeof projectContent];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [])
   
   return (
     <div className="p-8 max-w-full">

@@ -1,6 +1,14 @@
 // About page component
 
+import { useEffect } from "react";
+
 export default function About() {
+
+  useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, [])
+
+
   return (
     <div className="p-8 space-y-12 max-w-4xl mx-auto">
       {/* Header Section */}
