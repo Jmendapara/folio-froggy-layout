@@ -396,7 +396,7 @@ export default function ProjectDetail() {
   
   return (
     <div className="p-8 max-w-full">
-      <h1 className="text-[32px] font-bold text-black font-rufina mb-8">{project.title}</h1>
+      <h1 className="text-[32px] font-bold text-black font-rufina">{project.title}</h1>
       
       <div className="space-y-6">
         {project.sections.map((section, index) => {
