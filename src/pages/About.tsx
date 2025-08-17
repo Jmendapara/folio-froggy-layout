@@ -102,13 +102,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      
-      {/* Footer Note */}
-      <div className="pt-8">
-        <p className="text-right text-xs text-muted-foreground">
-          📍 Designed & illustrated by me in NYC.
-        </p>
-      </div>
+     
     </div>
   );
 }
