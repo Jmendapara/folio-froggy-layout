@@ -201,9 +201,8 @@ const projectContent = {
         content: "Over the course of 3 weeks, my design partner and I went to multiple design forums to get feedback on content, visuals, and customer experience. We finally got official design approval for the following screens."
       },
       {
-        type: "gif",
+        type: "2-gifs",
         path: "/business-dashboard/16.gif",
-        caption: "Final business dashboard design that was released to customers"
       },
       {
         type: "text-bold",
@@ -406,6 +405,29 @@ export default function ProjectDetail() {
       <div className="space-y-6">
         {project.sections.map((section, index) => {
           switch (section.type) {
+            case '2-gifs':
+            return (
+              <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'flex-row'}`} style={{alignItems: "center", justifyContent: "center", display: "flex"
+
+              }}>
+                  <div className={`w-70 ${isMobile ? 'w-100' : 'm-8'}`} style={{alignItems: "center", justifyContent: "flex-end", display: "flex", flexDirection:"column"}}>
+                  <img 
+                      src={"/business-dashboard/16.gif"}
+                      alt="Research insights"
+                      className="w-full"
+                      style={{  borderRadius: '0px' }}
+                    />
+                  </div>
+                  <div className={`w-30 ${isMobile ? 'w-100' : 'm-8 '}`} style={{alignItems: "center", justifyContent: "flex-start", display: "flex", flexDirection:"row"}}>
+                    <img 
+                      src={"/business-dashboard/17.gif"}
+                      alt="Research insights"
+                      className="w-full"
+                      style={{ maxWidth: "175px", borderRadius: '0px' }}
+                    />
+                  </div>
+                </div>
+            )
             case 'heading':
               return (
                 <h2 key={index} className="text-[24px] font-bold font-rufina mb-4" style={{ color: '#0C5949', marginTop: isMobile ? '24px' : '48px' }}>

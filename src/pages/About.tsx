@@ -10,7 +10,7 @@ export default function About() {
 
 
   return (
-    <div className="p-8 space-y-12 max-w-4xl mx-auto">
+    <div className="p-8 max-w-full">
       {/* Header Section */}
       <div className="space-y-8">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground">

@@ -55,7 +55,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <div className="p-8 pt-24">
+        <div className="p-8 pt-20">
           <div className="flex items-center justify-end space-x-4 text-xs text-black">
             <a 
               href="mailto:gupta.raina.99@gmail.com?subject=Let's chat!"
