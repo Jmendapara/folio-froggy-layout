@@ -3,7 +3,7 @@ const wompWompImage = "/profile/froggy.png";
 
 const navigation = [
   { name: "UX design", href: "/" },
-  { name: "About me", href: "/about" },
+  // { name: "About me", href: "/about" },
   { name: "Resume", href: "/resume" },
 ];
 
@@ -43,7 +43,7 @@ export default function Sidebar({ onItemClick }: SidebarProps = {}) {
         <img
           src={wompWompImage}
           alt="Womp womp illustration"
-          className="w-[70%] mx-auto opacity-60"
+          className="w-[70%] mx-auto"
         />
       </div>
     </div>

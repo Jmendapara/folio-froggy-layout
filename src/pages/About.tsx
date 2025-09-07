@@ -1,5 +1,6 @@
 // About page component
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect } from "react";
 
 export default function About() {
@@ -8,21 +9,24 @@ export default function About() {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, [])
 
+      const isMobile = useIsMobile();
+    
 
   return (
     <div className="p-8 max-w-full">
       {/* Header Section */}
       <div className="space-y-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+        <h1 className="text-[32px] font-bold font-rufina mb-12">
           Hi there, I'm Raina. It's nice to meet you! 👋
         </h1>
         
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Profile Image */}
-          <div className="w-full">
+          <div className={`w-full align-items-center justify-content-center ${isMobile ? "" : "pr-8 mb-8"}`}>
             <div 
-              className="w-full bg-placeholder"
-              style={{ aspectRatio: '4/5' }}
+              
+              style={{ aspectRatio: '4/5'}}
+
             ><img src="/profile/profilepic.png"></img></div>
           </div>
           
@@ -77,9 +81,10 @@ export default function About() {
       
       {/* Creative Outlets Section */}
       <div className="space-y-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+        <h2  className="text-[24px] font-bold font-rufina mb-4" style={{ marginTop: isMobile ? '32px' : '32px' }}>
           I'm also a creative who loves exploring different outlets and mediums
         </h2>
+        
         
         <div className="grid md:grid-cols-3 gap-8">
           {/* Ceramics & Pottery */}

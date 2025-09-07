@@ -410,7 +410,7 @@ export default function ProjectDetail() {
               <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'flex-row'}`} style={{alignItems: "center", justifyContent: "center", display: "flex"
 
               }}>
-                  <div className={`w-70 ${isMobile ? 'w-100' : 'm-8'}`} style={{alignItems: "center", justifyContent: "flex-end", display: "flex", flexDirection:"column"}}>
+                  <div className={`${isMobile ? 'w-100' : ''}`} style={{alignItems: "center", justifyContent: "flex-end", display: "flex", flexDirection:"column", width: !isMobile? "75%": "100%"}}>
                   <img 
                       src={"/business-dashboard/16.gif"}
                       alt="Research insights"
@@ -418,12 +418,12 @@ export default function ProjectDetail() {
                       style={{  borderRadius: '0px' }}
                     />
                   </div>
-                  <div className={`w-30 ${isMobile ? 'w-100' : 'm-8 '}`} style={{alignItems: "center", justifyContent: "flex-start", display: "flex", flexDirection:"row"}}>
+                  <div className={`${isMobile ? 'w-100' : 'm-8'}`} style={{alignItems: "center", justifyContent: "flex-start", display: "flex", flexDirection:"row", width: !isMobile? "23%": "100%"}}>
                     <img 
                       src={"/business-dashboard/17.gif"}
                       alt="Research insights"
                       className="w-full"
-                      style={{ maxWidth: "175px", borderRadius: '0px' }}
+                      style={{  borderRadius: '0px' }}
                     />
                   </div>
                 </div>
@@ -499,7 +499,7 @@ export default function ProjectDetail() {
                     src={section.path}
                     alt="Project image"
                     className="mt-6"
-                    style={{ borderRadius: '0px',  maxHeight: "400px" }}
+                    style={{ borderRadius: '0px' }}
                   />
                   {section.caption ? <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>{section.caption}</p> : null}
                 </div>
@@ -555,8 +555,8 @@ export default function ProjectDetail() {
               );
               case 'image-text-2':
                 return (
-                  <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
-                    <div className="flex-1 p-8" style={{display:"flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                  <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'pt-8 md:flex-row'}`}>
+                    <div className="flex-1 p-8" style={{display:"flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center"}}>
                       <div style={{display:"flex", flexDirection: "row"}}>
                       <p style={{fontSize: "10px", marginRight:"1em"}}>💡</p>
                       <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
@@ -721,7 +721,7 @@ export default function ProjectDetail() {
               );
               case 'three-column-detailed-2':
                 return (
-                  <div key={index} className="my-8">
+                  <div key={index} className="my-8 pt-8">
                     <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                         <div>
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Methodology</h3>
