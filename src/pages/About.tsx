@@ -16,13 +16,13 @@ export default function About() {
     <div className="p-8 max-w-full">
       {/* Header Section */}
       <div className="space-y-8">
-        <h1 className="text-[32px] font-bold font-rufina mb-12">
+        <h1 className="text-[32px] font-bold font-rufina mb-14">
           Hi there, I'm Raina. It's nice to meet you! 👋
         </h1>
         
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Profile Image */}
-          <div className={`w-full align-items-center justify-content-center ${isMobile ? "" : "pr-8 mb-8"}`}>
+          <div className={`w-full align-items-center justify-content-center ${isMobile ? "" : "pr-8 mb-14"}`}>
             <div 
               
               style={{ aspectRatio: '4/5'}}
@@ -79,6 +79,25 @@ export default function About() {
         </div>
       </div>
       
+      <div className="my-8 px-6 pb-6 mb-16" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
+                 
+                  <div className={`gap-6 md:gap-0 ${isMobile ? 'flex flex-col' : 'flex flex-col md:flex-row justify-between items-center'}`} style={{ alignItems: "start"}}>
+                      <div className="text-center" style={{width: "100%"}}>
+                        <p className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px" }}>{"“"}</p>
+                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina clearly sets a high visual bar, digs deep into exploration, and is a clear communicator with their point of view."}</div>
+                      </div>
+                      <div className="text-center" style={{width: "100%"}}>
+                        <p className="text-[60px] font-bold font-rufina  pt-4" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"  }}>{"“"}</p>
+                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has been a powerhouse of a teammate this year, not only leading her own lane of work, but by jumping into wherever design support has been needed."}</div>
+                      </div>
+                      <div className="text-center" style={{width: "100%"}}>
+                        <p className="text-[60px] font-bold font-rufina pt-4" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"  }}>{"“"}</p>
+                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has a great learning attitude. She wants to improve how she delivers designs and to be an excellent partner."}</div>
+                      </div>
+                  </div>
+
+                </div>
+
       {/* Creative Outlets Section */}
       <div className="space-y-8">
         <h2  className="text-[24px] font-bold font-rufina mb-4" style={{ marginTop: isMobile ? '32px' : '32px' }}>

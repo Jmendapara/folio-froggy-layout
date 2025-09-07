@@ -3,7 +3,7 @@ const wompWompImage = "/profile/froggy.png";
 
 const navigation = [
   { name: "UX design", href: "/" },
-  // { name: "About me", href: "/about" },
+  { name: "About me", href: "/about" },
   { name: "Resume", href: "/resume" },
 ];
 
