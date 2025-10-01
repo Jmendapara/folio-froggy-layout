@@ -62,7 +62,7 @@ export default function UXDesign() {
                 <h3 className="text-xs font-bold text-black leading-tight md:flex-1 md:pr-4  md:text-ellipsis md:whitespace-nowrap" style={{fontSize: "14px"}}>
                   {project.title}
                 </h3>
-                <span className="text-xs font-bold text-[#696969] md:w-1/2 md:text-right md:mt-0" style={{ marginTop: isMobile ? '0px' : undefined, fontSize: "14px" }}>
+                <span className="text-xs font-bold text-[#696969] md:w-1/2 md:text-right md:mt-0" style={{ marginTop: isMobile ? '0px' : undefined, fontSize: "14px", fontWeight: "600" }}>
                   {project.duration}
                 </span>
               </div>
