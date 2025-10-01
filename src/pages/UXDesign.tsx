@@ -59,7 +59,7 @@ export default function UXDesign() {
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="flex justify-between items-start md:flex-row flex-col md:space-y-0 space-y-2">
-                <h3 className="text-xs font-bold text-black leading-tight md:flex-1 md:pr-4  md:text-ellipsis md:whitespace-nowrap">
+                <h3 className="text-xs font-bold text-black leading-tight md:flex-1 md:pr-4  md:text-ellipsis md:whitespace-nowrap" style={{fontSize: "14px"}}>
                   {project.title}
                 </h3>
                 <span className="text-xs font-bold text-[#696969] md:w-1/2 md:text-right md:mt-0" style={{ marginTop: isMobile ? '0px' : undefined }}>

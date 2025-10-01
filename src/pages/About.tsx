@@ -83,15 +83,15 @@ export default function About() {
                  
                   <div className={`gap-6 md:gap-0 ${isMobile ? 'flex flex-col' : 'flex flex-col md:flex-row justify-between items-center'}`} style={{ alignItems: "start"}}>
                       <div className="text-center" style={{width: "100%"}}>
-                        <p className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px" }}>{"“"}</p>
+                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
                         <div className="text-sm text-foreground leading-relaxed px-4">{"Raina clearly sets a high visual bar, digs deep into exploration, and is a clear communicator with their point of view."}</div>
                       </div>
                       <div className="text-center" style={{width: "100%"}}>
-                        <p className="text-[60px] font-bold font-rufina  pt-4" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"  }}>{"“"}</p>
+                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
                         <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has been a powerhouse of a teammate this year, not only leading her own lane of work, but by jumping into wherever design support has been needed."}</div>
                       </div>
                       <div className="text-center" style={{width: "100%"}}>
-                        <p className="text-[60px] font-bold font-rufina pt-4" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"  }}>{"“"}</p>
+                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
                         <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has a great learning attitude. She wants to improve how she delivers designs and to be an excellent partner."}</div>
                       </div>
                   </div>

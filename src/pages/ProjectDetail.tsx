@@ -510,7 +510,7 @@ export default function ProjectDetail() {
                 <div key={index} className="mt-8 text-xs text-black space-y-1 font-bricolage" style={{marginBottom: "4em"}}>
                   {section.details.map((detail) => {
                       return <>
-                      <div>{detail.title}:<strong style={{fontWeight:"600"}}> {detail.description}</strong></div>
+                      <div><span><p>{detail.title}:<strong style={{fontWeight:"600"}}> {detail.description}</strong></p></span></div>
                     </>
                      }
                     )}
