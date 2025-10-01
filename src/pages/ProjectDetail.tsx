@@ -529,15 +529,15 @@ export default function ProjectDetail() {
               return (
                 <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
                   <div className="flex-1">
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4 mb-8">
                     Participants seemed to appreciate the split, with no major experience downsides for consumers. Majority of users noted that an account separation would mitigate risk with accounts and contacts when handling financial transactions.
                     </p>
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Learning curve</h3>
+                    <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">Learning curve</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
                     After completing one task, users pivoted to understand the value of having separated business accounts. This validates that small business users find the split view structure intuitive and routine.
                     </p>
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">User experience</h3>
+                    <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">User experience</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
                     The cognitive load is easier with split accounts as it is cleaner and simple, reducing perceived financial risks.
                     </p>
@@ -710,7 +710,7 @@ export default function ProjectDetail() {
                         <ul className="space-y-2">
                           {column.points?.map((point, pointIndex) => (
                             <li key={pointIndex} className="text-xs text-black font-bricolage leading-relaxed">
-                              {point}
+                              <p>{point}</p>
                             </li>
                           ))}
                         </ul>
