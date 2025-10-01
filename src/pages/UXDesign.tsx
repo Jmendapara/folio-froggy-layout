@@ -17,14 +17,14 @@ export default function UXDesign() {
       id: "business-profile-space",
       title: "Building a business-centric profile space for small business owners within their banking platform",
       description: "User research, prototyping, UI design",
-      duration: "May 2025 - August 2025, September 2024 - present",
+      duration: "February 2024 - August 2024",
       image: "/business-dashboard/13.png",
     },
     {
       id: "payments-adoption",
       title: "A journey to increase adoption of our business payments solutions products",
       description: "User research, prototyping, UI design, data auditing",
-      duration: "September 2025 - February 2024",
+      duration: "November 2023 - January 2024",
       image: "/empath/20.png",
     },
   ];
