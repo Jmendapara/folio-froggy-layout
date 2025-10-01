@@ -378,7 +378,7 @@ const projectContent = {
       {
         type: "image",
         path: "/empath/24.png",
-        caption: "My initial ideations of a full screen view using our servicing specific design system. This page would be accessible by click"
+        caption: "My initial ideations of a full screen view using our servicing specific design system. This page would be accessible via the payment drawer."
       },
     ]
   }
@@ -727,13 +727,13 @@ export default function ProjectDetail() {
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Methodology</h3>
                           <ul className="space-y-2">
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • <strong>Moderated</strong> usability test
+                              <p>• <strong>Moderated</strong> usability test</p>
                               </li>
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • <strong>5 servicing agents</strong> were asked a series of questions and servicing scenarios regarding Accounts Payable that they had to walk through given a Pay Vendors Empath prototype
+                              <p>• <strong>5 servicing agents</strong> were asked a series of questions and servicing scenarios regarding Accounts Payable that they had to walk through given a Pay Vendors Empath prototype</p>
                               </li>
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • All participants were Capital One business credit card agents
+                              <p>• All participants were Capital One business credit card agents</p>
                               </li>
                           </ul>
                         </div>
@@ -741,13 +741,13 @@ export default function ProjectDetail() {
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Goals</h3>
                           <ul className="space-y-2">
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • <strong>Gauge feelings and impressions</strong> surrounding new Empath experience
+                              <p>• <strong>Gauge feelings and impressions</strong> surrounding new Empath experience</p>
                               </li>
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • <strong>Determine usability</strong> for completing a servicing call
+                              <p>• <strong>Determine usability</strong> for completing a servicing call</p>
                               </li>
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • Get thoughts on <strong>additional features</strong> that could be added
+                              <p>• Get thoughts on <strong>additional features</strong> that could be added</p>
                               </li>
                           </ul>
                         </div>
@@ -755,10 +755,10 @@ export default function ProjectDetail() {
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Results</h3>
                           <ul className="space-y-2">
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • <strong>We got very positive feedback</strong>  on the timeline view of the container, and most agents said <strong>the information we are providing would be very helpful </strong>during their servicing calls.
+                              <p>• <strong>We got very positive feedback</strong>  on the timeline view of the container, and most agents said <strong>the information we are providing would be very helpful </strong>during their servicing calls.</p>
                               </li>
                               <li className="text-xs text-black font-bricolage leading-relaxed">
-                              • Agents were <strong>open to even more information if possible,</strong> including definitions of the different timeline dates.
+                              <p>• Agents were <strong>open to even more information if possible,</strong> including definitions of the different timeline dates.</p>
                               </li>
                       
                           </ul>
