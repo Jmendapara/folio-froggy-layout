@@ -1,7 +1,7 @@
 export default function Resume() {
   const handleOpenPDF = () => {
     // Open PDF in new tab
-    window.open('/profile/resume3pdf.pdf', '_blank');
+    window.open('/profile/Resume2025.pdf', '_blank');
   };
 
   return (
@@ -10,7 +10,7 @@ export default function Resume() {
         {/* Resume Image */}
         <div className="mb-8">
           <img 
-            src="/profile/resume3.png"
+            src="/profile/Resume2025.png"
             alt="Raina Gupta Resume"
             className="w-full h-auto object-contain"
             style={{ borderRadius: '0px', border: '1px solid #E5E5E5' }}
