@@ -773,7 +773,7 @@ export default function ProjectDetail() {
                     {section.stats?.map((stat, statIndex) => (
                       <div key={statIndex} className="text-center">
                         <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
-                        <div className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
+                        <div style={{fontSize: "14px"}} className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
                       </div>
                     ))}
                   </div>
