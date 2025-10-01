@@ -110,3 +110,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-bricolage;
   }
 }
+
+p {
+  font-size: 14px !important;
+}

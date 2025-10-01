@@ -533,11 +533,11 @@ export default function ProjectDetail() {
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4 mb-8">
                     Participants seemed to appreciate the split, with no major experience downsides for consumers. Majority of users noted that an account separation would mitigate risk with accounts and contacts when handling financial transactions.
                     </p>
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Learning curve</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
                     After completing one task, users pivoted to understand the value of having separated business accounts. This validates that small business users find the split view structure intuitive and routine.
                     </p>
-                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
+                    <h3 className="text-xs font-bold text-black font-bricolage mb-2">User experience</h3>
                     <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
                     The cognitive load is easier with split accounts as it is cleaner and simple, reducing perceived financial risks.
                     </p>
