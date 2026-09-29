@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 interface PasswordGateProps {
   children: React.ReactNode;
@@ -51,8 +51,8 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
 
   return (
     <div className="fixed inset-0 bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="w-full max-w-[424px]">
+        <form onSubmit={handleSubmit} className="relative">
           <div className="relative">
             <Input
               type="password"
@@ -62,7 +62,7 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
                 setPassword(e.target.value);
                 setShowError(false);
               }}
-              className="pr-12 border-border/20 focus:border-primary rounded-none"
+              className="h-11 pl-4 pr-12 text-base md:text-base rounded-none border-[#BDBDBD] placeholder:text-[#333333] focus-visible:ring-0 focus-visible:ring-offset-0"
               autoFocus
             />
             <Button
@@ -71,10 +71,10 @@ const PasswordGate = ({ children }: PasswordGateProps) => {
               size="sm"
               className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 p-0 hover:bg-transparent"
             >
-              <ChevronRight className="h-4 w-4" />
+              <MoveRight className="!h-6 !w-6" strokeWidth={1.25} />
             </Button>
           </div>
-          <div className="h-6 flex items-center justify-center">
+          <div className="absolute left-0 right-0 top-full mt-4 flex items-center justify-center">
             {showError && (
               <p className="text-sm text-destructive text-center">
                 The password you entered is incorrect. Please try again.

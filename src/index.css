@@ -41,7 +41,7 @@ All colors MUST be HSL.
     /* Portfolio specific colors */
     --sidebar-bg: 0 0% 100%;
     --sidebar-text: 0 0% 0%;
-    --sidebar-selected: 129 75% 20%;
+    --sidebar-selected: 168 76% 20%;
     --placeholder: 0 0% 65%;
     --project-description: 0 0% 41%;
 
@@ -112,5 +112,6 @@ All colors MUST be HSL.
 }
 
 p {
-  font-size: 14px !important;
+  font-size: 12px !important;
+  line-height: normal !important;
 }

@@ -6,6 +6,237 @@ import { Cell } from "recharts";
 import { useEffect } from "react";
 
 const projectContent = {
+  "card-onboarding": {
+    title: "Building a scalable card onboarding experience",
+    sections: [
+      {
+        type: "image",
+        path: "/onboarding/1.png",
+      },
+      {
+        type: "project-details",
+        details: [{title: "Company", description: "Capital One (small business card team)"},{title: "Timeline", description: "February 2025-August 2025"},{title: "Tools & methodologies", description: "Prototyping, UI design, QA review"},{title: "Role", description: "UX designer (design lead)"}]
+      },
+      {
+        type: "callout",
+        blocks: [
+          {label: "Problem statement", content: "Current card onboarding suffers from a fragmented experience, resulting in high user drop-off and friction during account setup."},
+          {label: "The opportunity", content: "Redesign the onboarding flow to build a unified, scalable foundation that accelerates time-to-value for new cardholders."}
+        ]
+      },
+      {
+        type: "heading",
+        content: "Our current day experience"
+      },
+      {
+        type: "image",
+        path: "/onboarding/2.png",
+        caption: "Our BAU modal experience"
+      },
+      {
+        type: "rich",
+        body: (
+          <>
+            <p className="mb-4">Why this experiences poses gaps:</p>
+            <ol className="list-decimal pl-[18px]">
+              <li><strong style={{fontWeight: 600}}>Access gap:</strong> System unreliability hid account setup from 20% of eligible users.</li>
+              <li><strong style={{fontWeight: 600}}>Lack of clarity:</strong> Critical steps lacked guidance, leading to high abandonment rates.</li>
+              <li><strong style={{fontWeight: 600}}>Scalability issues:</strong> Legacy designs couldn't support new card types or feature rollouts.</li>
+            </ol>
+          </>
+        )
+      },
+      {
+        type: "heading",
+        content: "Approaching the problem strategically"
+      },
+      {
+        type: "subheading",
+        number: 1,
+        content: "Competitive analysis"
+      },
+      {
+        type: "text",
+        content: "I looked at companies like Ramp, Duolingo, Airbnb, and more to understand what onboarding experiences were working that were out there today. I felt like Ramp was a great starting point and aligned well to what we were looking to accomplish on this new page."
+      },
+      {
+        type: "image",
+        path: "/onboarding/3.png",
+        caption: "Lucid boards screenshots of my competitive analysis!"
+      },
+      {
+        type: "subheading",
+        number: 2,
+        content: "Existing research"
+      },
+      {
+        type: "text",
+        content: "Design partners on my org had conducted an ‘Onboarding mindsets’ study that maps user onboarding patterns and behaviors. Consistently referencing this was super helpful when defining our user needs."
+      },
+      {
+        type: "image",
+        path: "/onboarding/4.png",
+        caption: "A few slides from the ‘Onboarding mindsets’ research deck"
+      },
+      {
+        type: "subheading",
+        number: 3,
+        content: "Analyzing user and business goals against user states"
+      },
+      {
+        type: "text",
+        content: "I used the ‘Onboarding mindsets research to map our what the different user and business needs were during each user state. I then listed out all the features the products that align back to both the business and the user. If they didn’t tie back to both, I omitted them from the list."
+      },
+      {
+        type: "text",
+        content: "It still left the question of how much of a need these tasks and products were? So I conducted an exercise to find the trends and validate the results of my exercise."
+      },
+      {
+        type: "image",
+        path: "/onboarding/5.png",
+        caption: "Strategy exercised I conducted and shared to leadership during weekly team feedback sessions"
+      },
+      {
+        type: "callout",
+        blocks: [
+          {label: "An unexpected scope change", content: "An accelerated timeline for the Discover merge required building a scalable onboarding solution for migrating customers. Partnering with Consumer design, product, and tech teams allowed us to deliver a unified enterprise framework under tight constraints."}
+        ]
+      },
+      {
+        type: "two-column-list",
+        columns: [
+          {
+            title: "⚡ Wins & accomplishments",
+            points: [
+              {label: "Scalable framework:", text: "We worked closely with tech to build components that could be scaled across multiple orgs."},
+              {label: "Efficient execution:", text: "Leveraged external benchmarks (e.g., Ramp) to move fast without reinvention."},
+              {label: "Enterprise impact:", text: "De-risked the experience across diverse customer bases to maximize reach."}
+            ]
+          },
+          {
+            title: "⚖️ Tradeoffs and constraints",
+            points: [
+              {label: "Generic experience:", text: "We couldn't build a personalized, business specific experience for our customers"},
+              {label: "Research impact:", text: "Skipped conducting usability research under tight timelines."},
+              {label: "High stakeholder overhead:", text: "Navigated complex multi-team approvals to align competing opinions."}
+            ]
+          }
+        ]
+      },
+      {
+        type: "heading",
+        content: "The design process & user journey"
+      },
+      {
+        type: "subheading",
+        content: "Account setup user journey"
+      },
+      {
+        type: "text",
+        content: "Because of the quick turnaround, we stuck to what we knew and built a page that was straightforward and simple with the following journey map."
+      },
+      {
+        type: "image",
+        path: "/onboarding/6.png"
+      },
+      {
+        type: "subheading",
+        content: "Delivering a scalable solution"
+      },
+      {
+        type: "text",
+        content: "To accommodate both user bases within tight engineering parameters, we built a modular onboarding flow. Below is a breakdown of the final designs and key experience differences:"
+      },
+      {
+        type: "image",
+        path: "/onboarding/7.png"
+      },
+      {
+        type: "subheading",
+        content: "Key improvements"
+      },
+      {
+        type: "rich",
+        body: (
+          <ul className="list-disc pl-[18px]">
+            <li><strong style={{fontWeight: 600}}>Progress indication:</strong> Clear visual states on tasks to indication completion.</li>
+            <li><strong style={{fontWeight: 600}}>Contextual content:</strong> Embedded sub-copy to add value props and clear task descriptions.</li>
+            <li><strong style={{fontWeight: 600}}>Product specific entry points:</strong> Deep-links to enrollment flows for key features and benefits.</li>
+          </ul>
+        )
+      },
+      {
+        type: "heading",
+        content: "Performance tracking & quick enhancements"
+      },
+      {
+        type: "callout",
+        blocks: [
+          {
+            label: "Results & metrics",
+            content: (
+              <>
+                <span className="block"><span style={{ color: '#3EAF3F' }}>⬈</span> 69% increase in overall clickthrough rate</span>
+                <span className="block"><span style={{ color: '#3EAF3F' }}>⬈</span> 88% increase in overall completion rate</span>
+                <span className="block"><span style={{ color: '#E14942' }}>⬊</span> 6% decrease in completion rate of ‘Set up AutoPay’ & ‘Choose how you pay’</span>
+              </>
+            )
+          }
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Fast follows to early metrics"
+      },
+      {
+        type: "text",
+        content: "I explored layout options to break up a flat list structure, using visual hierarchy to combat the lack of engagement on essential onboarding tasks via account setup."
+      },
+      {
+        type: "image",
+        path: "/onboarding/8.png"
+      },
+      {
+        type: "rich",
+        body: (
+          <>
+            <p className="mb-4">I hypothesized that including a time badge estimates for these tasks would:</p>
+            <ol className="list-decimal pl-[18px] mb-4">
+              <li>Show users that these <strong style={{fontWeight: 600}}>tasks are quick and easy to complete.</strong></li>
+              <li>Give a <strong style={{fontWeight: 600}}>visual nudge to draw attention</strong> to these tasks, ultimately increasing completion rates.</li>
+            </ol>
+            <p>After connecting with my analyst partners to get accurate time ranges for how long these tasks take, I went through design & legal approvals for this change. After launching, we saw an average of <strong style={{fontWeight: 600}}>8.37% increase in task completion across all essential tasks!</strong></p>
+          </>
+        )
+      },
+      {
+        type: "image",
+        path: "/onboarding/9.png",
+        caption: "Responsive views for final essential task badge designs"
+      },
+      {
+        type: "heading",
+        content: "Next steps"
+      },
+      {
+        type: "three-column-custom",
+        columns: [
+          {
+            title: "Tailoring business-specific workflows",
+            description: ["Incorporate business-focused requirements, including industry-specific content, relevant imagery, and tailored touchpoints."]
+          },
+          {
+            title: "Integrating early-stage education",
+            description: ["Deliver proactive guidance during initial setup to accelerate time-to-value, reduce friction, and minimize support requests."]
+          },
+          {
+            title: "Personalizing the experience",
+            description: ["Transition from generic business templates to dynamic experiences tailored to specific business models and scales."]
+          }
+        ]
+      }
+    ]
+  },
   "object-oriented-design": {
     title: "Object oriented design: How we're using data to define the future of business experiences",
     sections: [
@@ -399,8 +630,8 @@ export default function ProjectDetail() {
   }, [])
   
   return (
-    <div className="p-8 max-w-full">
-      <h1 className="text-[32px] font-bold text-black font-rufina">{project.title}</h1>
+    <div className="p-8 md:p-0 max-w-full">
+      <h1 className="text-[32px] font-bold text-black font-rufina leading-[1.25] mb-12">{project.title}</h1>
       
       <div className="space-y-6">
         {project.sections.map((section, index) => {
@@ -430,19 +661,19 @@ export default function ProjectDetail() {
             )
             case 'heading':
               return (
-                <h2 key={index} className="text-[24px] font-bold font-rufina mb-4" style={{ color: '#0C5949', marginTop: isMobile ? '24px' : '48px' }}>
+                <h2 key={index} className="text-[24px] font-bold font-rufina leading-[1.25] mb-4" style={{ color: '#0C5949', marginTop: isMobile ? '24px' : '48px' }}>
                   {section.content}
                 </h2>
               );
             case 'text':
               return (
-                <p key={index} className="text-xs text-black leading-relaxed font-bricolage" style={{marginTop: "1em"}}>
+                <p key={index} className="text-xs text-black leading-[1.2] font-bricolage" style={{marginTop: "1em"}}>
                   {section.content}
                 </p>
               );
             case 'text-bold':
               return (
-                <p key={index} className="text-xs text-black leading-relaxed font-bricolage" style={{marginTop: "1em"}}>
+                <p key={index} className="text-xs text-black leading-[1.2] font-bricolage" style={{marginTop: "1em"}}>
                   {section.content?.includes('object oriented design framework') ? (
                     <>
                       I used the <strong>object oriented design framework</strong> to approach this problem. It is the process of "<strong>putting object design before procedural action design</strong> and thinking about a system through the lens of the real-world objects in a user's mental model (products, tutorials, locations), not digital-world actions (search, filter, compare, check out)" -Sophia V. Prater from <u>'Object Oriented Design'</u>.
@@ -486,41 +717,82 @@ export default function ProjectDetail() {
                   <img 
                     src={section.path}
                     alt="Project image"
-                    className="mt-6"
                     style={{ borderRadius: '0px' }}
                   />
-                  {section.caption ? <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>{section.caption}</p> : null}
+                  {section.caption ? <p className="text-center text-xs font-bricolage" style={{ fontWeight: 200, marginTop: '16px' }}>{section.caption}</p> : null}
                 </div>
               );
             case 'image':
               return (
                 <div key={index} style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
-                  <img 
-                    src={section.path}
+                  <img
+                    srcSet={`${section.path} 2x`}
                     alt="Project image"
-                    className="mt-6"
                     style={{ borderRadius: '0px' }}
                   />
-                  {section.caption ? <p className="text-center text-xs font-bricolage mb-6" style={{ color: '#6B6B6B', marginTop: '16px' }}>{section.caption}</p> : null}
+                  {section.caption ? <p className="text-center text-xs font-bricolage" style={{ fontWeight: 200, marginTop: '16px' }}>{section.caption}</p> : null}
                 </div>
               );
-              
+            case 'subheading':
+              return (
+                <h3 key={index} className="text-base font-bold font-rufina" style={{ color: '#0C5949', marginTop: '32px' }}>
+                  {section.number ? `${section.number}. ` : null}{section.content}
+                </h3>
+              );
+            case 'rich':
+              return (
+                <div key={index} className="text-xs text-black leading-[1.2] font-bricolage" style={{marginTop: "1em"}}>
+                  {section.body}
+                </div>
+              );
+            case 'callout':
+              return (
+                <div key={index} className="my-8 p-6 space-y-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
+                  {section.blocks?.map((block, blockIndex) => (
+                    <div key={blockIndex}>
+                      <div className="text-xs font-semibold font-bricolage mb-4" style={{ color: '#0C5949' }}>{block.label}</div>
+                      <h3 className="text-[20px] font-bold font-rufina leading-[1.25]" style={{ color: '#0B5451' }}>
+                        {block.content}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+              );
+            case 'two-column-list':
+              return (
+                <div key={index} className={`my-8 flex gap-6 ${isMobile ? 'flex-col' : 'flex-row'}`}>
+                  {section.columns?.map((column, columnIndex) => (
+                    <div
+                      key={columnIndex}
+                      className="flex-1"
+                      style={!isMobile && columnIndex > 0 ? { borderLeft: '1px solid #E3E3E3', paddingLeft: '12px' } : undefined}
+                    >
+                      <h3 className="text-base font-bold font-rufina text-black" style={{ padding: '13px 15px 12px' }}>{column.title}</h3>
+                      <ul className="list-disc pl-[18px] space-y-3">
+                        {column.points?.map((point, pointIndex) => (
+                          <li key={pointIndex} className="text-xs text-black font-bricolage leading-[1.2]">
+                            <strong style={{fontWeight: 600}}>{point.label}</strong> {point.text}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              );
+
             case 'project-details':
               return (
                 <div key={index} className="mt-8 text-xs text-black space-y-1 font-bricolage" style={{marginBottom: "4em"}}>
-                  {section.details.map((detail) => {
-                      return <>
-                      <div><span><p>{detail.title}:<strong style={{fontWeight:"600"}}> {detail.description}</strong></p></span></div>
-                    </>
-                     }
-                    )}
+                  {section.details.map((detail) => (
+                    <div key={detail.title}><p><span style={{fontWeight: 200}}>{detail.title}:</span> {detail.description}</p></div>
+                  ))}
                 </div>
               );
             case 'problem-statement':
               return (
                 <div key={index} className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
-                  <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
-                  <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
+                  <div className="text-xs font-semibold font-bricolage mb-4" style={{ color: '#0C5949' }}>Problem statement</div>
+                  <h3 className="text-[20px] font-bold font-rufina leading-[1.25]" style={{ color: '#0B5451' }}>
                     {section.content || "82% of small business customers reported that being able to view business and personal accounts separately after logging into online banking is important—yet they were using consumer-centric interfaces, contributing to financial risk and usability issues."}
                   </h3>
                 </div>
@@ -530,15 +802,15 @@ export default function ProjectDetail() {
                 <div key={index} className={`my-8 flex gap-8 ${isMobile ? 'flex-col' : 'md:flex-row'}`}>
                   <div className="flex-1">
                     <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">Overall sentiment</h3>
-                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4 mb-8">
+                    <p className="text-xs text-black font-bricolage leading-[1.2] mt-4 mb-8">
                     Participants seemed to appreciate the split, with no major experience downsides for consumers. Majority of users noted that an account separation would mitigate risk with accounts and contacts when handling financial transactions.
                     </p>
                     <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">Learning curve</h3>
-                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
+                    <p className="text-xs text-black font-bricolage leading-[1.2] mt-4  mb-8">
                     After completing one task, users pivoted to understand the value of having separated business accounts. This validates that small business users find the split view structure intuitive and routine.
                     </p>
                     <h3 style={{fontSize: "14px"}} className="text-xs font-bold text-black font-bricolage mb-2">User experience</h3>
-                    <p className="text-xs text-black font-bricolage leading-relaxed mt-4  mb-8">
+                    <p className="text-xs text-black font-bricolage leading-[1.2] mt-4  mb-8">
                     The cognitive load is easier with split accounts as it is cleaner and simple, reducing perceived financial risks.
                     </p>
                   </div>
@@ -549,7 +821,7 @@ export default function ProjectDetail() {
                       className="w-full"
                       style={{ maxWidth: "175px", borderRadius: '0px' }}
                     />
-                    <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Conceptual design of the profile switching experience we presented to participants</p>
+                    <p className="text-center text-xs font-bricolage mt-4" style={{ fontWeight: 200 }}>Conceptual design of the profile switching experience we presented to participants</p>
                   </div>
                 </div>
               );
@@ -559,20 +831,20 @@ export default function ProjectDetail() {
                     <div className="flex-1 p-8" style={{display:"flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center"}}>
                       <div style={{display:"flex", flexDirection: "row"}}>
                       <p style={{fontSize: "10px", marginRight:"1em"}}>💡</p>
-                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      <p className="text-xs text-black font-bricolage leading-[1.2] mb-8">
                       Each <strong>green bubble represented a user object,</strong> each with different roles for their business
                       </p>
                       </div>
                       <div style={{display:"flex", flexDirection: "row"}}>
                       <p style={{fontSize: "10px", marginRight:"1em"}}>💡</p>
-                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      <p className="text-xs text-black font-bricolage leading-[1.2] mb-8">
                       <strong>Primary users</strong> (ex: Business owner) are the <strong>only user type allowed</strong> to open a business account
                       </p>
                       </div>
                      
                       <div style={{display:"flex", flexDirection: "row"}}>
                       <p style={{fontSize: "10px", marginRight:"1em"}}>💡</p>
-                      <p className="text-xs text-black font-bricolage leading-relaxed mb-8">
+                      <p className="text-xs text-black font-bricolage leading-[1.2] mb-8">
                       This model serves as a <strong>valuable entry point for small business customers</strong> who are not already consumers to potentially use Capital One for their personal banking since they’ve already been onboarded with a consumer login.
                       </p>
                       </div>
@@ -585,20 +857,20 @@ export default function ProjectDetail() {
                         className="w-full"
                         style={{ maxWidth: "350px", borderRadius: '0px' }}
                       />
-                      <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>Research findings visualization</p>
+                      <p className="text-center text-xs font-bricolage mt-4" style={{ fontWeight: 200 }}>Research findings visualization</p>
                     </div>
                   </div>
                 );
             case "questions":
               return (
                 <>
-                <p className="text-xs text-black font-bricolage leading-relaxed">
+                <p className="text-xs text-black font-bricolage leading-[1.2]">
                 ❓ What would the <strong>data architecture of a separated business and personal</strong> experience look like?
                 </p>
-                 <p className="text-xs text-black font-bricolage leading-relaxed" style={{marginTop: "8px"}}>
+                 <p className="text-xs text-black font-bricolage leading-[1.2]" style={{marginTop: "8px"}}>
                  ❓ How does the <strong>data architecture inform the user experience</strong> of a separated business profile?
                  </p>
-                 <p className="text-xs text-black font-bricolage leading-relaxed mt-0" style={{marginTop: "8px"}}>
+                 <p className="text-xs text-black font-bricolage leading-[1.2] mt-0" style={{marginTop: "8px"}}>
                  ❓ What is the <strong>relationship between a personal and business profile</strong> in terms of what data they share and what data is independent?
                  </p>
                  </>
@@ -609,25 +881,25 @@ export default function ProjectDetail() {
                   <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-4'}`}>
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">1</h3>
-                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                      <p className="text-xs text-black font-bricolage leading-[1.2]">
                       Breaks down complex ideas and experiences into manageable objects
                       </p>
                     </div>
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">2</h3>
-                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                      <p className="text-xs text-black font-bricolage leading-[1.2]">
                       Helps us understand the customer mental model
                       </p>
                     </div>
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">3</h3>
-                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                      <p className="text-xs text-black font-bricolage leading-[1.2]">
                       Structures information architecture in a way that avoids inconsistencies and repetition
                       </p>
                     </div>
                     <div>
                       <h3 className="text-xs font-bold text-black font-bricolage mb-3">4</h3>
-                      <p className="text-xs text-black font-bricolage leading-relaxed">
+                      <p className="text-xs text-black font-bricolage leading-[1.2]">
                       An approach that helps bridge the gap between product, design, and tech teams
                       </p>
                     </div>
@@ -637,8 +909,8 @@ export default function ProjectDetail() {
             case 'major-takeaway':
               return (
                 <div key={index} className="my-8 p-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
-                  <div className="text-xs font-bricolage mb-4" style={{ color: '#0C5949' }}>Major takeaway</div>
-                  <h3 className="text-[20px] font-bold font-rufina leading-relaxed" style={{ color: '#0B5451' }}>
+                  <div className="text-xs font-semibold font-bricolage mb-4" style={{ color: '#0C5949' }}>Major takeaway</div>
+                  <h3 className="text-[20px] font-bold font-rufina leading-[1.25]" style={{ color: '#0B5451' }}>
                     All customers are 'user' objects, some of which have a relationship with a business entity.
                   </h3>
                 </div>
@@ -678,7 +950,7 @@ export default function ProjectDetail() {
                       <ChevronRight className="h-4 w-4" />
                     </CarouselNext>
                   </Carousel>
-                  <p className="text-center text-xs font-bricolage mt-4" style={{ color: '#6B6B6B' }}>
+                  <p className="text-center text-xs font-bricolage mt-4" style={{ fontWeight: 200 }}>
                     {section.content}
                   </p>
                 </div>
@@ -709,7 +981,7 @@ export default function ProjectDetail() {
                         <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>{column.title}</h3>
                         <ul className="space-y-2">
                           {column.points?.map((point, pointIndex) => (
-                            <li key={pointIndex} className="text-xs text-black font-bricolage leading-relaxed">
+                            <li key={pointIndex} className="text-xs text-black font-bricolage leading-[1.2]">
                               <p>{point}</p>
                             </li>
                           ))}
@@ -721,44 +993,44 @@ export default function ProjectDetail() {
               );
               case 'three-column-detailed-2':
                 return (
-                  <div key={index} className="my-8 pt-8">
+                  <div key={index} className="my-8">
                     <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                         <div>
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Methodology</h3>
-                          <ul className="space-y-2">
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• <strong>Moderated</strong> usability test</p>
+                          <ul className="list-disc pl-[18px] space-y-3">
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p><strong>Moderated</strong> usability test</p>
                               </li>
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• <strong>5 servicing agents</strong> were asked a series of questions and servicing scenarios regarding Accounts Payable that they had to walk through given a Pay Vendors Empath prototype</p>
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p><strong>5 servicing agents</strong> were asked a series of questions and servicing scenarios regarding Accounts Payable that they had to walk through given a Pay Vendors Empath prototype</p>
                               </li>
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• All participants were Capital One business credit card agents</p>
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p>All participants were Capital One business credit card agents</p>
                               </li>
                           </ul>
                         </div>
                         <div>
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Goals</h3>
-                          <ul className="space-y-2">
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• <strong>Gauge feelings and impressions</strong> surrounding new Empath experience</p>
+                          <ul className="list-disc pl-[18px] space-y-3">
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p><strong>Gauge feelings and impressions</strong> surrounding new Empath experience</p>
                               </li>
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• <strong>Determine usability</strong> for completing a servicing call</p>
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p><strong>Determine usability</strong> for completing a servicing call</p>
                               </li>
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• Get thoughts on <strong>additional features</strong> that could be added</p>
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p>Get thoughts on <strong>additional features</strong> that could be added</p>
                               </li>
                           </ul>
                         </div>
                         <div>
                           <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>Results</h3>
-                          <ul className="space-y-2">
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• <strong>We got very positive feedback</strong>  on the timeline view of the container, and most agents said <strong>the information we are providing would be very helpful </strong>during their servicing calls.</p>
+                          <ul className="list-disc pl-[18px] space-y-3">
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p><strong>We got very positive feedback</strong>  on the timeline view of the container, and most agents said <strong>the information we are providing would be very helpful </strong>during their servicing calls.</p>
                               </li>
-                              <li className="text-xs text-black font-bricolage leading-relaxed">
-                              <p>• Agents were <strong>open to even more information if possible,</strong> including definitions of the different timeline dates.</p>
+                              <li className="text-xs text-black font-bricolage leading-[1.2]">
+                              <p>Agents were <strong>open to even more information if possible,</strong> including definitions of the different timeline dates.</p>
                               </li>
                       
                           </ul>
@@ -773,7 +1045,7 @@ export default function ProjectDetail() {
                     {section.stats?.map((stat, statIndex) => (
                       <div key={statIndex} className="text-center">
                         <h3 className="text-[40px] font-bold font-rufina" style={{ color: '#0C5949' }}>{stat.title}</h3>
-                        <div style={{fontSize: "14px"}} className="text-xs text-black font-bricolage mt-2">{stat.description}</div>
+                        <div className="text-xs text-black font-bricolage mt-2 mx-auto" style={{ maxWidth: '180px' }}>{stat.description}</div>
                       </div>
                     ))}
                   </div>
@@ -793,12 +1065,12 @@ export default function ProjectDetail() {
             case 'three-column-custom':
               return (
                 <div key={index} className="my-8">
-                  <div className={`grid gap-6 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
+                  <div className={`grid gap-6 md:gap-[72px] ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
                         <h3 className="text-base font-bold font-rufina mb-3" style={{ color: '#0C5949' }}>{column.title}</h3>
                         {column.description?.map((desc, columnIndex) => (
-                        <p className="text-xs text-black font-bricolage leading-relaxed" style={{marginBottom: "1em"}}>
+                        <p className="text-xs text-black font-bricolage leading-[1.2]" style={{marginBottom: "1em"}}>
                           {desc}
                         </p>
                         ))}

@@ -1,7 +1,6 @@
 import { ReactNode, useState } from "react";
 import Sidebar from "./Sidebar";
-import { HiOutlineMail } from "react-icons/hi";
-import { FiLinkedin } from "react-icons/fi";
+import { PiEnvelopeSimpleBold, PiLinkedinLogoBold } from "react-icons/pi";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
@@ -49,27 +48,29 @@ export default function Layout({ children }: LayoutProps) {
       )}
       
       {/* Main content area */}
-      <main className={`flex flex-col ${isMobile ? 'pt-16' : 'ml-64'}`}>
-        <div className="flex-1 overflow-y-auto">
+      <main className={`flex flex-col ${isMobile ? 'pt-16' : 'ml-[337px] pt-[60px] pr-[43px] pb-[60px]'}`}>
+        <div className="flex-1 overflow-y-auto w-full md:max-w-[900px]">
           {children}
         </div>
         
         {/* Footer */}
-        <div className="p-8 pt-20">
-          <div className="flex items-center justify-end space-x-4 text-xs text-black">
+        <div className="p-8 pt-20 md:p-0 md:pt-12 w-full md:max-w-[900px]">
+          <div className="flex items-center justify-end space-x-2 text-xs text-black">
             <a 
               href="mailto:gupta.raina.99@gmail.com?subject=Let's chat!"
               className="text-black hover:opacity-70"
+              aria-label="Email"
             >
-              <HiOutlineMail className="w-4 h-4" />
+              <PiEnvelopeSimpleBold className="w-[25px] h-[25px]" />
             </a>
             <a 
               href="https://www.linkedin.com/in/rainagupta"
               target="_blank"
               rel="noopener noreferrer"
               className="text-black hover:opacity-70"
+              aria-label="LinkedIn"
             >
-              <FiLinkedin className="w-4 h-4" />
+              <PiLinkedinLogoBold className="w-[27px] h-[27px]" />
             </a>
             <span>Designed & illustrated by me in NYC.</span>
           </div>

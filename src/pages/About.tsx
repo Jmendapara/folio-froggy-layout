@@ -3,6 +3,48 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useEffect } from "react";
 
+const traits = [
+  {
+    emoji: "🧠",
+    title: "A strategic thinker with a technical edge",
+    body: (
+      <>
+        My UX approach <strong>blends analytical problem-solving with creative insight,</strong> enabling me to craft user experiences that are both intuitive and technically sound. With a foundation in computer science, I bring a <strong>systems-level perspective to every project</strong>, ensuring design decisions align with business goals, user needs, and technical realities.
+      </>
+    ),
+  },
+  {
+    emoji: "👥",
+    title: "An advocate for collaborative communities",
+    body: (
+      <>
+        My favorite part about being a UX designer is getting the opportunity to foster close <strong>collaboration across design disciplines</strong> like content and research, while also learning from the diverse perspectives of my <strong>cross-functional product and tech partners</strong>. A holistic approach to problem solving ultimately leads to <strong>inclusive and sustainable solutions.</strong>
+      </>
+    ),
+  },
+  {
+    emoji: "🐶",
+    title: "A dog enthusiast",
+    body: (
+      <>
+        I admire my dog’s simple living and the way he scratches his back on the grass. When I’m not designing, you can find me hanging out with him or picking out his eye boogies.
+      </>
+    ),
+  },
+];
+
+const quotes = [
+  "Raina clearly sets a high visual bar, digs deep into exploration, and is a clear communicator with their point of view.",
+  "Raina has been a powerhouse of a teammate this year, not only leading her own lane of work, but by jumping into wherever design support has been needed.",
+  "Raina has a great learning attitude. She wants to improve how she delivers designs and to be an excellent partner.",
+];
+
+const outlets = [
+  { image: "/profile/pottery.png", label: "Ceramics & pottery" },
+  { image: "/profile/africa.png", label: "Film photography" },
+  { image: "/profile/market.png", label: "Illustrating prints & merch" },
+];
+
 export default function About() {
 
   useEffect(() => {
@@ -10,131 +52,73 @@ export default function About() {
     }, [])
 
       const isMobile = useIsMobile();
-    
+
 
   return (
-    <div className="p-8 max-w-full">
+    <div className="p-8 md:p-0 max-w-full font-bricolage text-black">
       {/* Header Section */}
-      <div className="space-y-8">
-        <h1 className="text-[32px] font-bold font-rufina mb-14">
-          Hi there, I'm Raina. It's nice to meet you! 👋
-        </h1>
-        
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Profile Image */}
-          <div className={`w-full align-items-center justify-content-center ${isMobile ? "" : "pr-8 mb-14"}`}>
-            <div 
-              
-              style={{ aspectRatio: '4/5'}}
+      <h1 className="text-[32px] font-bold font-rufina leading-[1.25] mb-12">
+        Hi there, I’m Raina. It’s nice to meet you! 👋🏽
+      </h1>
 
-            ><img src="/profile/profilepic.png"></img></div>
-          </div>
-          
-          {/* About Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-sm text-muted-foreground uppercase tracking-wide">
-                A TLDR on who I am...
-              </p>
-              
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <span className="text-lg">🧠</span>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-2">A strategic thinker with a technical edge</h3>
-                      <p className="text-sm text-foreground leading-relaxed">
-                        My UX approach <strong>blends analytical problem-solving with creative insight</strong>, enabling me to craft user experiences that are both intuitive and technically sound. With a foundation in computer science, I bring a <strong>systems-level perspective to every project</strong>, ensuring design decisions align with business goals, user needs, and technical realities.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <span className="text-lg">👥</span>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-2">An advocate for collaborative communities</h3>
-                      <p className="text-sm text-foreground leading-relaxed">
-                        My favorite part about being a UX designer is getting the opportunity to foster close <strong>collaboration across design disciplines</strong> like content and research, while also learning from the diverse perspectives of my <strong>cross-functional product and tech partners</strong>. A holistic approach to problem solving ultimately leads to <strong>inclusive and sustainable solutions</strong>.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <span className="text-lg">🐕</span>
-                    <div>
-                      <h3 className="font-bold text-foreground mb-2">A dog enthusiast</h3>
-                      <p className="text-sm text-foreground leading-relaxed">
-                        I admire my dog's simple living and the way he scratches his back on the grass. When I'm not designing, you can find me hanging out with him or picking out his eye boogies.
-                      </p>
-                    </div>
-                  </div>
+      <div className={`flex gap-12 ${isMobile ? 'flex-col' : 'flex-row items-start'}`}>
+        {/* Profile Image */}
+        <img
+          src="/profile/profilepic.png"
+          alt="Raina"
+          className="object-cover shrink-0"
+          style={{ width: isMobile ? '100%' : '257px', aspectRatio: '257/343' }}
+        />
+
+        {/* About Content */}
+        <div className="flex-1">
+          <p>A TLDR on who I am...</p>
+
+          <div className="mt-[29px] space-y-[29px]">
+            {traits.map((trait) => (
+              <div key={trait.title} className="flex items-start">
+                <span className="w-[28px] shrink-0 text-[12px] leading-[14px]">{trait.emoji}</span>
+                <div>
+                  <h3 className="text-xs font-semibold leading-[14px]">{trait.title}</h3>
+                  <p className="mt-2">{trait.body}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-      
-      <div className="my-8 px-6 pb-6 mb-16" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
-                 
-                  <div className={`gap-6 md:gap-0 ${isMobile ? 'flex flex-col' : 'flex flex-col md:flex-row justify-between items-center'}`} style={{ alignItems: "start"}}>
-                      <div className="text-center" style={{width: "100%"}}>
-                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
-                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina clearly sets a high visual bar, digs deep into exploration, and is a clear communicator with their point of view."}</div>
-                      </div>
-                      <div className="text-center" style={{width: "100%"}}>
-                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
-                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has been a powerhouse of a teammate this year, not only leading her own lane of work, but by jumping into wherever design support has been needed."}</div>
-                      </div>
-                      <div className="text-center" style={{width: "100%"}}>
-                        <h3 className="text-[60px] font-bold font-rufina" style={{ color: '#0C5949', lineHeight: ".5", paddingTop: "32px"}}>{"“"}</h3>
-                        <div className="text-sm text-foreground leading-relaxed px-4">{"Raina has a great learning attitude. She wants to improve how she delivers designs and to be an excellent partner."}</div>
-                      </div>
-                  </div>
 
-                </div>
+      {/* Testimonials */}
+      <div
+        className={`mt-12 px-8 py-4 flex gap-6 ${isMobile ? 'flex-col' : 'flex-row justify-between items-center'}`}
+        style={{ backgroundColor: '#EEE8D5', minHeight: '145px' }}
+      >
+        {quotes.map((quote) => (
+          <div key={quote} className="text-center" style={{ width: isMobile ? '100%' : '243px' }}>
+            <div className="text-[40px] font-bold font-rufina leading-[49px]" style={{ color: '#0C5949' }}>“</div>
+            <p>{quote}</p>
+          </div>
+        ))}
+      </div>
 
       {/* Creative Outlets Section */}
-      <div className="space-y-8">
-        <h2  className="text-[24px] font-bold font-rufina mb-4" style={{ marginTop: isMobile ? '32px' : '32px' }}>
-          I'm also a creative who loves exploring different outlets and mediums
-        </h2>
-        
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Ceramics & Pottery */}
-          <div className="space-y-4">
-            <div 
-              className="w-full bg-placeholder"
-              style={{ aspectRatio: '1/1' }}
-            ><img src="/profile/pottery.png"></img></div>
-            <h3 className="text-center font-medium text-foreground">Ceramics & pottery</h3>
+      <h2 className="text-[20px] font-bold font-rufina leading-[25px] mt-12">
+        I’m also a creative who loves exploring different outlets and mediums
+      </h2>
+
+      <div className={`mt-12 grid gap-8 md:gap-[42px] ${isMobile ? 'grid-cols-1' : 'grid-cols-3'}`}>
+        {outlets.map((outlet) => (
+          <div key={outlet.label}>
+            <img
+              src={outlet.image}
+              alt={outlet.label}
+              className="w-full object-cover"
+              style={{ aspectRatio: '271/362' }}
+            />
+            <p className="text-center mt-4">{outlet.label}</p>
           </div>
-          
-          {/* Film Photography */}
-          <div className="space-y-4">
-            <div 
-              className="w-full bg-placeholder"
-              style={{ aspectRatio: '1/1' }}
-            ><img src="/profile/africa.png"></img></div>
-            <h3 className="text-center font-medium text-foreground">Film photography</h3>
-          </div>
-          
-          {/* Illustrating Prints & Merch */}
-          <div className="space-y-4">
-            <div 
-              className="w-full bg-placeholder"
-              style={{ aspectRatio: '1/1' }}
-            ><img src="/profile/market.png"></img></div>
-            <h3 className="text-center font-medium text-foreground">Illustrating prints & merch</h3>
-          </div>
-        </div>
+        ))}
       </div>
-     
     </div>
   );
 }
