@@ -71,6 +71,7 @@ const projectContent = {
       {
         type: "subheading",
         number: 2,
+        marginTop: "56px",
         content: "Existing research"
       },
       {
@@ -85,6 +86,7 @@ const projectContent = {
       {
         type: "subheading",
         number: 3,
+        marginTop: "56px",
         content: "Analyzing user and business goals against user states"
       },
       {
@@ -102,12 +104,15 @@ const projectContent = {
       },
       {
         type: "callout",
+        marginTop: "64px",
+        marginBottom: "48px",
         blocks: [
           {label: "An unexpected scope change", content: "An accelerated timeline for the Discover merge required building a scalable onboarding solution for migrating customers. Partnering with Consumer design, product, and tech teams allowed us to deliver a unified enterprise framework under tight constraints."}
         ]
       },
       {
         type: "two-column-list",
+        marginBottom: "64px",
         columns: [
           {
             title: "⚡ Wins & accomplishments",
@@ -203,7 +208,8 @@ const projectContent = {
       },
       {
         type: "three-column-custom",
-        paddingTop: "32px",
+        paddingTop: "48px",
+        paddingBottom: "32px",
         columns: [
           {
             title: "Hypothesis",
@@ -745,7 +751,7 @@ export default function ProjectDetail() {
               );
             case 'subheading':
               return (
-                <h3 key={index} className="text-base font-bold font-rufina" style={{ color: '#0C5949', marginTop: '32px' }}>
+                <h3 key={index} className="text-base font-bold font-rufina" style={{ color: '#0C5949', marginTop: section.marginTop ?? '32px' }}>
                   {section.number ? `${section.number}. ` : null}{section.content}
                 </h3>
               );
@@ -757,7 +763,7 @@ export default function ProjectDetail() {
               );
             case 'callout':
               return (
-                <div key={index} className="my-8 p-6 space-y-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px' }}>
+                <div key={index} className="my-8 p-6 space-y-6" style={{ backgroundColor: '#EEE8D5', borderRadius: '0px', marginTop: section.marginTop, marginBottom: section.marginBottom }}>
                   {section.blocks?.map((block, blockIndex) => (
                     <div key={blockIndex}>
                       <div className="text-xs font-semibold font-bricolage mb-4" style={{ color: '#0C5949' }}>{block.label}</div>
@@ -770,7 +776,7 @@ export default function ProjectDetail() {
               );
             case 'two-column-list':
               return (
-                <div key={index} className={`my-8 flex gap-6 ${isMobile ? 'flex-col' : 'flex-row'}`}>
+                <div key={index} className={`my-8 flex gap-6 ${isMobile ? 'flex-col' : 'flex-row'}`} style={{ marginBottom: section.marginBottom }}>
                   {section.columns?.map((column, columnIndex) => (
                     <div
                       key={columnIndex}
@@ -1074,7 +1080,7 @@ export default function ProjectDetail() {
               );
             case 'three-column-custom':
               return (
-                <div key={index} className="my-8" style={section.paddingTop ? { paddingTop: section.paddingTop } : undefined}>
+                <div key={index} className="my-8" style={{ paddingTop: section.paddingTop, paddingBottom: section.paddingBottom }}>
                   <div className={`grid gap-6 md:gap-[72px] ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
