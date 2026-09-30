@@ -30,21 +30,25 @@ const projectContent = {
       },
       {
         type: "image",
-        path: "/onboarding/2.png",
-        caption: "Our BAU modal experience"
+        path: "/onboarding/2.png"
       },
       {
-        type: "rich",
-        body: (
-          <>
-            <p className="mb-4">Why this experiences poses gaps:</p>
-            <ol className="list-decimal pl-[18px]">
-              <li><strong style={{fontWeight: 600}}>Access gap:</strong> System unreliability hid account setup from 20% of eligible users.</li>
-              <li><strong style={{fontWeight: 600}}>Lack of clarity:</strong> Critical steps lacked guidance, leading to high abandonment rates.</li>
-              <li><strong style={{fontWeight: 600}}>Scalability issues:</strong> Legacy designs couldn't support new card types or feature rollouts.</li>
-            </ol>
-          </>
-        )
+        type: "three-column-custom",
+        paddingTop: "32px",
+        columns: [
+          {
+            title: "Access gap",
+            description: ["System unreliability hid account setup from 20% of eligible users."]
+          },
+          {
+            title: "Lack of clarity",
+            description: ["Critical steps lacked guidance, leading to high abandonment rates."]
+          },
+          {
+            title: "Scalability issues",
+            description: ["Legacy designs couldn't support new card types or feature rollouts."]
+          }
+        ]
       },
       {
         type: "heading",
@@ -85,11 +89,11 @@ const projectContent = {
       },
       {
         type: "text",
-        content: "I used the ‘Onboarding mindsets research to map our what the different user and business needs were during each user state. I then listed out all the features the products that align back to both the business and the user. If they didn’t tie back to both, I omitted them from the list."
+        content: <>I used the ‘Onboarding mindsets’ research to map our what the different user and business needs were during each user state. I then listed out all the features the products that <strong style={{fontWeight: 600}}>align back to both the business and the user</strong>. If they didn’t tie back to both, I omitted them from the list.</>
       },
       {
         type: "text",
-        content: "It still left the question of how much of a need these tasks and products were? So I conducted an exercise to find the trends and validate the results of my exercise."
+        content: <>That still left the question of how much of a need these tasks and products actually were, so I conducted an exercise to <strong style={{fontWeight: 600}}>find the trends and validate the results</strong>.</>
       },
       {
         type: "image",
@@ -194,20 +198,26 @@ const projectContent = {
       },
       {
         type: "image",
-        path: "/onboarding/8.png"
+        path: "/onboarding/8.png",
+        marginTop: "24px"
       },
       {
-        type: "rich",
-        body: (
-          <>
-            <p className="mb-4">I hypothesized that including a time badge estimates for these tasks would:</p>
-            <ol className="list-decimal pl-[18px] mb-4">
-              <li>Show users that these <strong style={{fontWeight: 600}}>tasks are quick and easy to complete.</strong></li>
-              <li>Give a <strong style={{fontWeight: 600}}>visual nudge to draw attention</strong> to these tasks, ultimately increasing completion rates.</li>
-            </ol>
-            <p>After connecting with my analyst partners to get accurate time ranges for how long these tasks take, I went through design & legal approvals for this change. After launching, we saw an average of <strong style={{fontWeight: 600}}>8.37% increase in task completion across all essential tasks!</strong></p>
-          </>
-        )
+        type: "three-column-custom",
+        paddingTop: "32px",
+        columns: [
+          {
+            title: "Hypothesis",
+            description: [<>Adding time estimate badges would show users these tasks are <strong style={{fontWeight: 600}}>quick and easy</strong>, and draw attention to them to <strong style={{fontWeight: 600}}>increase completion rates</strong>.</>]
+          },
+          {
+            title: "Process",
+            description: [<>I <strong style={{fontWeight: 600}}>partnered with analysts</strong> to get accurate time ranges for each task, then took the change through design and legal approvals.</>]
+          },
+          {
+            title: "Results",
+            description: [<>After launch, we saw an <strong style={{fontWeight: 600}}>average 8.37% increase in task completion</strong> across all essential tasks.</>]
+          }
+        ]
       },
       {
         type: "image",
@@ -724,7 +734,7 @@ export default function ProjectDetail() {
               );
             case 'image':
               return (
-                <div key={index} style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                <div key={index} style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", marginTop: section.marginTop}}>
                   <img
                     srcSet={`${section.path} 2x`}
                     alt="Project image"
@@ -741,7 +751,7 @@ export default function ProjectDetail() {
               );
             case 'rich':
               return (
-                <div key={index} className="text-xs text-black leading-[1.2] font-bricolage" style={{marginTop: "1em"}}>
+                <div key={index} className="text-xs text-black leading-[1.2] font-bricolage" style={{marginTop: section.marginTop ?? "1em"}}>
                   {section.body}
                 </div>
               );
@@ -1064,7 +1074,7 @@ export default function ProjectDetail() {
               );
             case 'three-column-custom':
               return (
-                <div key={index} className="my-8">
+                <div key={index} className="my-8" style={section.paddingTop ? { paddingTop: section.paddingTop } : undefined}>
                   <div className={`grid gap-6 md:gap-[72px] ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {section.columns?.map((column, columnIndex) => (
                       <div key={columnIndex}>
