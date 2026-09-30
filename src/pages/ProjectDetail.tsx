@@ -1,9 +1,10 @@
 import { useParams, Navigate } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Cell } from "recharts";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const projectContent = {
   "card-onboarding": {
@@ -634,6 +635,7 @@ const projectContent = {
 export default function ProjectDetail() {
   const { projectId } = useParams();
   const isMobile = useIsMobile();
+  const [expandedImage, setExpandedImage] = useState<{ src: string; alt: string } | null>(null);
   
   if (!projectId || !projectContent[projectId as keyof typeof projectContent]) {
     return <Navigate to="/" replace />;
@@ -649,7 +651,15 @@ export default function ProjectDetail() {
     <div className="p-8 md:p-0 max-w-full">
       <h1 className="text-[32px] font-bold text-black font-rufina leading-[1.25] mb-12">{project.title}</h1>
       
-      <div className="space-y-6">
+      <div
+        className="space-y-6 [&_img]:cursor-zoom-in"
+        onClick={(event) => {
+          const target = event.target as HTMLElement;
+          if (target instanceof HTMLImageElement) {
+            setExpandedImage({ src: target.currentSrc || target.src, alt: target.alt });
+          }
+        }}
+      >
         {project.sections.map((section, index) => {
           switch (section.type) {
             case '2-gifs':
@@ -1100,6 +1110,27 @@ export default function ProjectDetail() {
           }
         })}
       </div>
+
+      <DialogPrimitive.Root open={expandedImage !== null} onOpenChange={(open) => !open && setExpandedImage(null)}>
+        <DialogPrimitive.Portal>
+          <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/90 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <DialogPrimitive.Content
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-10 cursor-zoom-out focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+            onClick={() => setExpandedImage(null)}
+          >
+            <DialogPrimitive.Title className="sr-only">{expandedImage?.alt || "Expanded image"}</DialogPrimitive.Title>
+            {expandedImage ? (
+              <img src={expandedImage.src} alt={expandedImage.alt} className="max-w-full max-h-full object-contain" />
+            ) : null}
+            <DialogPrimitive.Close
+              className="absolute right-4 top-4 rounded-full p-2 text-white opacity-80 transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="Close"
+            >
+              <X className="h-6 w-6" />
+            </DialogPrimitive.Close>
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Portal>
+      </DialogPrimitive.Root>
     </div>
   );
 }
